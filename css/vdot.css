@@ -1,0 +1,33 @@
+table#measurements {
+    width: 100%;
+}
+table#measurements caption {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    border: solid forestgreen 1px;
+}
+table#measurements td {
+    padding: 0 5px 0 5px;
+}
+
+table#area {
+    width: 100%;
+}
+table#area caption {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    border: solid forestgreen 1px;
+}
+table#area td {
+    padding: 0 5px 0 5px;
+}
+
+table.core-mix {
+
+}
+
+table.core-mix th {
+    padding: 3px 5px 3px 5px;
+}
