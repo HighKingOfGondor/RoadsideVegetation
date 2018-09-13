@@ -32,6 +32,12 @@ table.core-mix th {
     padding: 3px 5px 3px 5px;
 }
 
-ul.numbered {
-    list-style-type: numeric;
+ul#top-menu li {
+    display: inline;
+}
+ul#top-menu li h4 {
+    display: inline;
+}
+ul#top-menu li, h4, p {
+    display: inline;
 }

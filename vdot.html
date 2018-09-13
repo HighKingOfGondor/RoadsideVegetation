@@ -9,6 +9,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="css/acrp0911.css" rel="stylesheet">
+    <link href="css/vdot.css" rel="stylesheet">
 
     <style>
         .jumbotron {
@@ -82,9 +83,270 @@
         </nav>
     </div><!-- end .container -->
 </header>
-    <div>
-
+    <div class="container">
+        <div class="page-header">
+            <h2>Start Page</h2>
+            <table cellpadding="40px;">
+                <tr>
+                    <td>
+                        <h4 style="color: red;">Fill in ALL fields with highlighting</h4><br>
+                        <p style="color: red;">Yellow: L&D; Blue: Roadside; Green: Both; Gray: Default Value that can be changed</p>
+                    </td>
+                    <td>
+                        <button class="btn btn-success">Save<br>File As...</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-info">Show <br>Input Hints</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-success">Show <br>Results</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger">Clear <br>Page</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger">Clear <br>All Input</button>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td>
+                        <h4>Version 2.0<br>Feb. 2017</h4>
+                    </td>
+                    <td style="background: black; ">
+                        <p style="color: red; font-size: 12px;">WARNING: Pressing the Clear Page/All Button can NOT be undone! Press it only if you intend to delete ALL input on this page or in this file.</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
+<div>
+    <table>
+        <thead>
+            <th>Project Information</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    Project Name/No.:
+                </td>
+                <td>
+                    <input type="text" name="pro-name" size="25" style="background: yellow">
+                </td>
+                <td>
+                    Roadside Data Form:
+                </td>
+                <td>
+                    <input type="text" name="pro-name" size="25" style="background: gray">
+                </td>
+            </tr>
+        <tr>
+            <td>
+                PPMS (UPC) #:
+            </td>
+            <td>
+                <input type="text" name="pro-name" size="25" style="background: yellow">
+            </td>
+            <td>
+                L&D Data Form:
+            </td>
+            <td >
+                <input type="text" name="pro-name" size="25" style="background: yellow">
+            </td>
+        </tr>
+        <tr>
+            <td>Planting Date:</td>
+            <td><input type="text" name="pro-name" size="25" style="background: yellow"></td>
+        </tr>
+        <tr>
+            <td>Project Description: </td>
+            <td><input type="text" name="pro-name" size="75" style="background: yellow"></td>
+        </tr>
+        <tr>
+            <td>File Location: </td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table><br>
+    <table>
+        <thead>
+            <th>Project Questionnaire</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1. Which region is this project located in?</td>
+                <td>
+                    <select style="background: #2e6da4; color: white;">
+                        <option value="mountain">Mountain</option>
+                        <option value="coastal">Coastal</option>
+                        <option value="piedmont">Piedmont</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>2. For the area to be fertilized, have the existing vegetation and topsoil layers been disturbed by grading or other earth moving activity?</td>
+                <td>
+                    <select style="background: gray; color: white;">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>2a. └» Is the subsoil exposed?</td>
+                <td>
+                    <select style="background: gray; color: white;">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>3. Is the fertilized being applied to repair or re-vegetate an area that failed to achieve stabilization after both regular and overseeding?</td>
+                <td>
+                    <select style="background: gray; color: white;">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>4a. If soil samples were analyzed, which laboratory (lab) was used?</td>
+                <td>
+                    <select>
+                        <option value="virginia">Virginia Tech Soil Testing Lab</option>
+                        <option value="waters-ga">Waters Agricultural Lab, Inc (GA)</option>
+                        <option value="waypoint">Waypoint Analytical</option>
+                        <option value="agri-analysis">Agri-Analysis Testing Laboratory</option>
+                        <option value="agrolab">AgroLab, Inc</option>
+                        <option value="brookside">Brookside Laboratories, Inc</option>
+                        <option value="logan">Logan Labs, LLC</option>
+                        <option value="midwest">Midwest Laboratories, Inc*</option>
+                        <option value="spectrum">Spectrum Analytic, Inc</option>
+                        <option value="waters-nc">Waters Agricultural Lab, Inc (NC)</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>4b. If soil samples were analyzed, how many will be entered here?</td>
+                <td><input type="text" name="pro-name" size="25" style="background: cornflowerblue"></td>
+            </tr>
+            <tr>
+                <td>5. How many core seed mixes will be used on this project?</td>
+                <td><input type="text" name="pro-name" size="25" style="background: cornflowerblue"></td>
+            </tr>
+            <tr>
+                <td>6. How large is the area that will receive temporary seed?</td>
+                <td><input type="text" name="pro-name" size="25" style="background: yellow"></td>
+                <td><input type="text" name="pro-name" size="25" style="background: gray"></td>
+            </tr>
+            <tr>
+                <td>7. Will topsoil be used on this project?</td>
+                <td>
+                    <select>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>7a. Which class of Topsoil should be used (A or B)?</td>
+                <td>
+                    <select>
+                        <option value="a">A</option>
+                        <option value="b">B</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>7b. How deep should the layer of topsoil be (in inches)?</td>
+                <td>
+                    <input type="number" name="pro-name" size="25" style="background: cornflowerblue">
+                </td>
+                <td>inches</td>
+            </tr>
+            <tr>
+                <td>7c. How large is the area that will receive Topsoil?</td>
+                <td><input type="number" name="pro-name" size="25" style="background: green"></td>
+                <td><input type="number" name="pro-name" size="25" style="background: green"></td>
+            </tr>
+            <tr>
+                <td>8. Total area of regular seed (based on entries below):</td>
+                <td><input type="number" name="pro-name" size="25"></td>
+                <td>sf</td>
+            </tr>
+        </tbody>
+    </table><br>
+    <table>
+        <thead>
+            <th>Core Mix #1</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1. Please enter a description of the area receiving Core Mix #1
+                    (e.g. Urban, Rural, Project 1, Smith Parcel, National Park Land, etc.)</td>
+                <td><input type="number" name="pro-name" size="25" style="background: cornflowerblue"></td>
+            </tr>
+            <tr>
+                <td>2a. How large is the area that will receive regular seed?</td>
+                <td><button class="btn btn-primary"><a href="calc.html">Use Area Calculator<br>Worksheet</a></button></td>
+                <td><input type="number" name="pro-name" size="25" style="background: yellow"></td>
+                <td style="background: gray">ac</td>
+            </tr>
+            <tr>
+                <td>2b. How much of the area receiving Regular Seed has slopes equal to or flatter than 3:1? (This area is the "Mowed Area")</td>
+                <td><input type="number" name="pro-name" size="25" style="background: yellow"></td>
+                <td style="background: gray">ac</td>
+            </tr>
+            <tr>
+                <td>2c. What is the steepest gradient of the area with slopes equal to or flatter than 3:1? ("Mowed Area")</td>
+                <td><td><input type="number" name="pro-name" size="25" style="background: yellow"></td></td>
+                <td>
+                    <select style="background: gray">
+                        <option value="slope">Slope (Ratio: 3:1)</option>
+                        <option value="grade">Grade (Percent 33%)</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>2d. How much of the area receiving Regular Seed has slopes that steeper than 3:1? (This area is the "Non-Mowed Area", aka "Slopes")</td>
+                <td><input type="number" name="pro-name" size="25" style="background: yellow"></td>
+                <td style="background: gray">ac</td>
+            </tr>
+            <tr>
+                <td>2e. What is the steepest gradient of the area with slopes steeper than 3:1? ("Non-Mowed Area" aka "Slopes")</td>
+                <td><td><input type="number" name="pro-name" size="25" style="background: yellow"></td></td>
+                <td>
+                    <select style="background: gray">
+                        <option value="slope">Slope (Ratio: 3:1)</option>
+                        <option value="grade">Grade (Percent 33%)</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>3. Does this area include both Urban and Rural sections?  <OR> Does this area contain sections with an adjusted seed application rate?</td>
+                <td><input type="number" name="pro-name" size="25" style="background: cornflowerblue"></td>
+            </tr>
+            <tr>
+                <td>3a. How much of the area with adjusted rates (urban) is mowed? (≤ 3:1)</td>
+                <td><input type="number" name="pro-name" size="25" style="background: green"></td>
+                <td style="background: gray">ac</td>
+            </tr>
+            <tr>
+                <td>3b. How much of the area with adjusted rates is NOT mowed? (> 3:1)</td>
+                <td><input type="number" name="pro-name" size="25" style="background: green"></td>
+                <td style="background: gray">ac</td>
+            </tr>
+            <tr>
+                <td>3c. What adjustment factor should be applied? (Typ. 2x for Urban Areas)</td>
+                <td><input type="number" name="pro-name" size="25" style="background: cornflowerblue"></td>
+                <td>x Normal Rate</td>
+            </tr>
+        </tbody>
+    </table><br>
+    <button class="btn btn-success" style="color: white; font-size: 30px;">+</button>
+</div>
 
 </body>
 </html>
