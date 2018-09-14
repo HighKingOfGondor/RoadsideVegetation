@@ -1,3 +1,42 @@
+div.info-left {
+    margin-left: 10px;
+    display: inline-block;
+}
+div.info-left h6 {
+    font-size: small;
+    font-weight: bold;
+    text-decoration: underline;
+}
+div.info-left span {
+    font-size: smaller;
+}
+div.info-right {
+    float: right;
+}
+div.info-right h6 {
+    font-size: small;
+    font-weight: bold;
+    text-decoration: underline;
+}
+div.warnings span {
+    color: red;
+    font-size: small;
+    font-weight: bold;
+}
+div.btn-sizing button {
+    width: 200px;
+    height: 50px;
+}
+div.btn-sizing span {
+    margin-top: 15px;
+    padding-right: 15px;
+    float: left;
+    font-size: medium;
+    font-weight: bold;
+}
+div.info-right span {
+    font-size: smaller;
+}
 table#measurements {
     width: 100%;
 }
@@ -25,19 +64,87 @@ table#area td {
 }
 
 table.core-mix {
-
+    width: 60%;
+    float: left;
+    border: solid black 1px;
 }
-
+table.core-mix caption {
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+}
 table.core-mix th {
+    font-size: small;
+    text-align: center;
+    border: solid black 1px;
     padding: 3px 5px 3px 5px;
 }
+table.core-mix td {
+    font-size: smaller;
+    text-align: center;
+    border: solid black 1px;
+}
+table.core-mix td input {
+    height: 10px;
+    font-size: small;
+    display: inline;
+    position: relative;
+    top: 7px;
+    border: none;
+    background: #4cae4c;
+    color: white;
+}
+table.core-mix td select {
+    background: #4cae4c;
+    text-align: center;
+    color: white;
+}
+table.core-mix td select option {
+    color: white;
+    font-size: small;
+}
 
-ul#top-menu li {
-    display: inline;
+table.table-body {
+    width: 55%;
+    margin: 5px 0px 0px 260px;
 }
-ul#top-menu li h4 {
-    display: inline;
+
+table.table-body caption {
+    font-size: large;
+    font-weight: bold;
+    color: black;
 }
-ul#top-menu li, h4, p {
+
+table.table-body tr td {
+    font-size: 12px;
+    width: 25%;
+    padding-top: 2px;
+    border-bottom: dotted #3e8f3e 1px;
+}
+table.table-body tr td input {
+    height: 10px;
+    font-size: small;
     display: inline;
+    position: relative;
+    top: 7px;
+    border: none;
+}
+
+table.table-body tr td button {
+    font-size: 12px;
+    border-radius: 12px;
+    width: 75%;
+}
+
+table.table-body tr td button a {
+    color: white;
+}
+table.table-body tr td select option {
+    font-size: small;
+}
+button.add {
+    width: 80px;
+    margin-left: 280px;
+    margin-top: 20px;
+    margin-bottom: 50px;
 }

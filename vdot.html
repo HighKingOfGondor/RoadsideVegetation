@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NCHRP 14-40</title>
     <!-- Bootstrap -->
+
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="css/acrp0911.css" rel="stylesheet">
@@ -39,6 +40,13 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.dropdown-toggle').dropdown();
+        });
+    </script>
+
     <![endif]-->
 </head>
 
@@ -63,12 +71,8 @@
                 <li>
                     <a href="facility.htm">Your Facility</a>
                 </li>
-                <!--  <li>
-                  <a href="help.htm">Help</a>
-                </li> -->
-
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">VDOT Roadside <span class="caret"></span></a>
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">VDOT Roadside<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="instructions.html">Instructions</a></li>
                         <li><a href="vdot.html">Start Page</a></li>
@@ -85,47 +89,49 @@
 </header>
     <div class="container">
         <div class="page-header">
-            <h2>Start Page</h2>
-            <table cellpadding="40px;">
-                <tr>
-                    <td>
-                        <h4 style="color: red;">Fill in ALL fields with highlighting</h4><br>
-                        <p style="color: red;">Yellow: L&D; Blue: Roadside; Green: Both; Gray: Default Value that can be changed</p>
-                    </td>
-                    <td>
-                        <button class="btn btn-success">Save<br>File As...</button>
-                    </td>
-                    <td>
-                        <button class="btn btn-info">Show <br>Input Hints</button>
-                    </td>
-                    <td>
-                        <button class="btn btn-success">Show <br>Results</button>
-                    </td>
-                    <td>
-                        <button class="btn btn-danger">Clear <br>Page</button>
-                    </td>
-                    <td>
-                        <button class="btn btn-danger">Clear <br>All Input</button>
-                    </td>
-                </tr>
-            </table>
-            <table>
-                <tr>
-                    <td>
-                        <h4>Version 2.0<br>Feb. 2017</h4>
-                    </td>
-                    <td style="background: black; ">
-                        <p style="color: red; font-size: 12px;">WARNING: Pressing the Clear Page/All Button can NOT be undone! Press it only if you intend to delete ALL input on this page or in this file.</p>
-                    </td>
-                </tr>
-            </table>
+            <h2>Start Page</h2><br>
+            <div class="btn-group btn-sizing" role="group" aria-label="options">
+                <span>Page Options:</span>
+                <button type="button" class="btn btn-primary">Save File As...</button>
+                <button type="button" class="btn btn-success">Show Results</button>
+                <button type="button" class="btn btn-danger">Clear Page</button>
+            </div>
+
         </div>
     </div>
+<div class="sidebar col-xs-3" style="float: right; width: 31%;">
+    <div class="well">
+        <div class="warnings">
+            <span style="font-size: medium;">Fill in ALL fields with highlighting<br></span>
+            <span>Yellow is L&D; Blue is Roadside; Green is Both.<br>Gray is a default value that can be changed.</span><br>
+            <span style="font-size: medium;">Warning!</span><span> Pressing the Clear Page/All button can NOT be undone! Press it only if you intend to delete ALL input on this page or in this file.</span>
+        </div>
+        <div class="info-left">
+            <h6>Routine Fertilization of Ex. Veg.</h6>
+            <span>Linear, non-interstate</span><br>
+            <span>Linear, interstate</span><br><br><br>
+            <span>Non-Linear, including interchanges</span><br>
+            <h6>Repair or Establish Vegetation</h6>
+            <span>Linear</span><br>
+            <span>Non-Linear including interchanges</span><br>
+            <h6>Problem Sites (failing vegetation)</h6>
+            <span>Linear & Non-Linear</span>
+        </div>
+        <div class="info-right">
+            <h6>Frequency of Soil Sampling</h6>
+            <span>One soil test per 5 mile section</span><br>
+            <span>One soil test per 5 mile section OR<br>one soil sample in each direction between exits,<br>whichever distance is greater</span><br>
+            <span>One soil test per 20 acres</span><br><br><h6></h6>
+            <span>One soil test per linear mile</span><br>
+            <span>One soil test per 20 acres</span><br><h6></h6><br>
+            <span>New soil test & site assessment by a qualified</span>
+
+        </div>
+    </div>
+</div>
 <div>
-    <table>
-        <thead>
-            <th>Project Information</th>
-        </thead>
+    <table class="table-body">
+        <caption>Project Information</caption>
         <tbody>
             <tr>
                 <td>
@@ -138,7 +144,7 @@
                     Roadside Data Form:
                 </td>
                 <td>
-                    <input type="text" name="pro-name" size="25" style="background: gray">
+                    <input type="text" name="pro-name" size="25" style="background: cornflowerblue">
                 </td>
             </tr>
         <tr>
@@ -159,20 +165,20 @@
             <td>Planting Date:</td>
             <td><input type="text" name="pro-name" size="25" style="background: yellow"></td>
         </tr>
+        </tbody>
+    </table>
+    <table class="table-body">
         <tr>
-            <td>Project Description: </td>
-            <td><input type="text" name="pro-name" size="75" style="background: yellow"></td>
+            <td style="width: 10%;">Project Description: </td>
+            <td><input type="text" name="pro-name" size="120" style="background: yellow"></td>
         </tr>
         <tr>
-            <td>File Location: </td>
+            <td style="width: 10%;">File Location: </td>
             <td></td>
         </tr>
-        </tbody>
     </table><br>
-    <table>
-        <thead>
-            <th>Project Questionnaire</th>
-        </thead>
+    <table class="table-body">
+        <caption>Project Questionnaire</caption>
         <tbody>
             <tr>
                 <td>1. Which region is this project located in?</td>
@@ -187,7 +193,7 @@
             <tr>
                 <td>2. For the area to be fertilized, have the existing vegetation and topsoil layers been disturbed by grading or other earth moving activity?</td>
                 <td>
-                    <select style="background: gray; color: white;">
+                    <select style="background: lightgray; color: black;">
                         <option value="yes">Yes</option>
                         <option value="no">No</option>
                     </select>
@@ -196,7 +202,7 @@
             <tr>
                 <td>2a. └» Is the subsoil exposed?</td>
                 <td>
-                    <select style="background: gray; color: white;">
+                    <select style="background: lightgray; color: black;">
                         <option value="yes">Yes</option>
                         <option value="no">No</option>
                     </select>
@@ -205,7 +211,7 @@
             <tr>
                 <td>3. Is the fertilized being applied to repair or re-vegetate an area that failed to achieve stabilization after both regular and overseeding?</td>
                 <td>
-                    <select style="background: gray; color: white;">
+                    <select style="background: lightgray; color: black;">
                         <option value="yes">Yes</option>
                         <option value="no">No</option>
                     </select>
@@ -230,16 +236,26 @@
             </tr>
             <tr>
                 <td>4b. If soil samples were analyzed, how many will be entered here?</td>
-                <td><input type="text" name="pro-name" size="25" style="background: cornflowerblue"></td>
+                <td><input type="number" name="pro-name" size="25" style="background: cornflowerblue"></td>
             </tr>
             <tr>
                 <td>5. How many core seed mixes will be used on this project?</td>
-                <td><input type="text" name="pro-name" size="25" style="background: cornflowerblue"></td>
+                <td><input type="number" name="pro-name" size="25" style="background: cornflowerblue"></td>
             </tr>
             <tr>
                 <td>6. How large is the area that will receive temporary seed?</td>
-                <td><input type="text" name="pro-name" size="25" style="background: yellow"></td>
-                <td><input type="text" name="pro-name" size="25" style="background: gray"></td>
+                <td><input type="number" name="pro-name" size="25" style="background: yellow"></td>
+                <td>
+                    <select style="background: lightgray;">
+                        <option value="ac">Acre(s)</option>
+                        <option value="hacre">Hectare(s)</option>
+                        <option value="ft">Square Feet</option>
+                        <option value="sk">Square Kilometer(s)</option>
+                        <option value="met">Square Meter(s)</option>
+                        <option value="mi">Square Mile(s)</option>
+                        <option value="yard">Square Yard(s)</option>
+                    </select>
+                </td>
             </tr>
             <tr>
                 <td>7. Will topsoil be used on this project?</td>
@@ -268,20 +284,28 @@
             </tr>
             <tr>
                 <td>7c. How large is the area that will receive Topsoil?</td>
-                <td><input type="number" name="pro-name" size="25" style="background: green"></td>
-                <td><input type="number" name="pro-name" size="25" style="background: green"></td>
+                <td><input type="number" name="pro-name" size="25" style="background: lightgreen"></td>
+                <td><input type="number" name="pro-name" size="25" style="background: lightgreen"></td>
             </tr>
             <tr>
                 <td>8. Total area of regular seed (based on entries below):</td>
                 <td><input type="number" name="pro-name" size="25"></td>
-                <td>sf</td>
+                <td>
+                    <select style="background: lightgray;">
+                        <option value="ac">Acre(s)</option>
+                        <option value="hacre">Hectare(s)</option>
+                        <option value="ft">Square Feet</option>
+                        <option value="sk">Square Kilometer(s)</option>
+                        <option value="met">Square Meter(s)</option>
+                        <option value="mi">Square Mile(s)</option>
+                        <option value="yard">Square Yard(s)</option>
+                    </select>
+                </td>
             </tr>
         </tbody>
     </table><br>
-    <table>
-        <thead>
-            <th>Core Mix #1</th>
-        </thead>
+    <table class="table-body">
+        <caption>Core Mix #1</caption>
         <tbody>
             <tr>
                 <td>1. Please enter a description of the area receiving Core Mix #1
@@ -290,20 +314,40 @@
             </tr>
             <tr>
                 <td>2a. How large is the area that will receive regular seed?</td>
-                <td><button class="btn btn-primary"><a href="calc.html">Use Area Calculator<br>Worksheet</a></button></td>
+                <td><button class="btn btn-primary"><a href="calc.html">Area Calculator</a></button></td>
                 <td><input type="number" name="pro-name" size="25" style="background: yellow"></td>
-                <td style="background: gray">ac</td>
+                <td>
+                    <select style="background: lightgray;">
+                        <option value="ac">Acre(s)</option>
+                        <option value="hacre">Hectare(s)</option>
+                        <option value="ft">Square Feet</option>
+                        <option value="sk">Square Kilometer(s)</option>
+                        <option value="met">Square Meter(s)</option>
+                        <option value="mi">Square Mile(s)</option>
+                        <option value="yard">Square Yard(s)</option>
+                    </select>
+                </td>
             </tr>
             <tr>
                 <td>2b. How much of the area receiving Regular Seed has slopes equal to or flatter than 3:1? (This area is the "Mowed Area")</td>
                 <td><input type="number" name="pro-name" size="25" style="background: yellow"></td>
-                <td style="background: gray">ac</td>
+                <td>
+                    <select style="background: lightgray;">
+                        <option value="ac">Acre(s)</option>
+                        <option value="hacre">Hectare(s)</option>
+                        <option value="ft">Square Feet</option>
+                        <option value="sk">Square Kilometer(s)</option>
+                        <option value="met">Square Meter(s)</option>
+                        <option value="mi">Square Mile(s)</option>
+                        <option value="yard">Square Yard(s)</option>
+                    </select>
+                </td>
             </tr>
             <tr>
                 <td>2c. What is the steepest gradient of the area with slopes equal to or flatter than 3:1? ("Mowed Area")</td>
                 <td><td><input type="number" name="pro-name" size="25" style="background: yellow"></td></td>
                 <td>
-                    <select style="background: gray">
+                    <select style="background: lightgray">
                         <option value="slope">Slope (Ratio: 3:1)</option>
                         <option value="grade">Grade (Percent 33%)</option>
                     </select>
@@ -312,13 +356,23 @@
             <tr>
                 <td>2d. How much of the area receiving Regular Seed has slopes that steeper than 3:1? (This area is the "Non-Mowed Area", aka "Slopes")</td>
                 <td><input type="number" name="pro-name" size="25" style="background: yellow"></td>
-                <td style="background: gray">ac</td>
+                <td>
+                    <select style="background: lightgray;">
+                        <option value="ac">Acre(s)</option>
+                        <option value="hacre">Hectare(s)</option>
+                        <option value="ft">Square Feet</option>
+                        <option value="sk">Square Kilometer(s)</option>
+                        <option value="met">Square Meter(s)</option>
+                        <option value="mi">Square Mile(s)</option>
+                        <option value="yard">Square Yard(s)</option>
+                    </select>
+                </td>
             </tr>
             <tr>
                 <td>2e. What is the steepest gradient of the area with slopes steeper than 3:1? ("Non-Mowed Area" aka "Slopes")</td>
                 <td><td><input type="number" name="pro-name" size="25" style="background: yellow"></td></td>
                 <td>
-                    <select style="background: gray">
+                    <select style="background: lightgray">
                         <option value="slope">Slope (Ratio: 3:1)</option>
                         <option value="grade">Grade (Percent 33%)</option>
                     </select>
@@ -330,13 +384,33 @@
             </tr>
             <tr>
                 <td>3a. How much of the area with adjusted rates (urban) is mowed? (≤ 3:1)</td>
-                <td><input type="number" name="pro-name" size="25" style="background: green"></td>
-                <td style="background: gray">ac</td>
+                <td><input type="number" name="pro-name" size="25" style="background: lightgreen"></td>
+                <td>
+                    <select style="background: lightgray;">
+                        <option value="ac">Acre(s)</option>
+                        <option value="hacre">Hectare(s)</option>
+                        <option value="ft">Square Feet</option>
+                        <option value="sk">Square Kilometer(s)</option>
+                        <option value="met">Square Meter(s)</option>
+                        <option value="mi">Square Mile(s)</option>
+                        <option value="yard">Square Yard(s)</option>
+                    </select>
+                </td>
             </tr>
             <tr>
                 <td>3b. How much of the area with adjusted rates is NOT mowed? (> 3:1)</td>
-                <td><input type="number" name="pro-name" size="25" style="background: green"></td>
-                <td style="background: gray">ac</td>
+                <td><input type="number" name="pro-name" size="25" style="background: lightgreen"></td>
+                <td>
+                    <select style="background: lightgray;">
+                        <option value="ac">Acre(s)</option>
+                        <option value="hacre">Hectare(s)</option>
+                        <option value="ft">Square Feet</option>
+                        <option value="sk">Square Kilometer(s)</option>
+                        <option value="met">Square Meter(s)</option>
+                        <option value="mi">Square Mile(s)</option>
+                        <option value="yard">Square Yard(s)</option>
+                    </select>
+                </td>
             </tr>
             <tr>
                 <td>3c. What adjustment factor should be applied? (Typ. 2x for Urban Areas)</td>
@@ -345,7 +419,7 @@
             </tr>
         </tbody>
     </table><br>
-    <button class="btn btn-success" style="color: white; font-size: 30px;">+</button>
+    <button class="btn btn-success add" style="color: white; font-size: 30px;">+</button>
 </div>
 
 </body>
