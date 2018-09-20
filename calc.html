@@ -188,6 +188,7 @@
                 <td><td></td><td></td>
                 <td>
                     <select id="nymow1">
+                        <option>---</option>
                         <option>Yes</option>
                         <option>No</option>
                     </select>
@@ -195,8 +196,8 @@
             </tr>
             <tr>
                 <td>Area 1 Total:</td>
-                <td>Please Select Units</td>
-                <td>Please answer question about slopes</td><td></td><td></td>
+                <td><span id="total-area1">Please Select Units</span></td>
+                <td id="mow1">Please answer question about slopes</td><td></td><td></td>
             </tr>
             </tbody>
         </table>
@@ -208,9 +209,9 @@
             <tbody>
             <tr>
                 <td>Length</td>
-                <td><input type="number" size="15" min="0" max="10000000"> </td>
+                <td><input type="number" size="15" min="0" max="10000000" id="lng2"> </td>
                 <td>
-                    <select>
+                    <select id="covl2">
                         <option>foot (feet)</option>
                         <option>mile(s)</option>
                         <option>kilometer(s)</option>
@@ -218,29 +219,29 @@
                         <option>yard(s)</option>
                     </select>
                 </td>
-                <td></td><td></td>
+                <td id="cfl2"></td><td id="vftl2"></td>
             </tr>
             <tr>
                 <td>Width</td>
-                <td><input type="number" size="15" min="0" max="10000000"> </td>
+                <td><input type="number" size="15" min="0" max="10000000" id="wi2"> </td>
                 <td>
-                    <select>
+                    <select id="covw2">
                         <option>foot (feet)</option>
                         <option>mile(s)</option>
                         <option>kilometer(s)</option>
                         <option>meter(s)</option>
                         <option>yard(s)</option>
                     </select>
-                </td><td></td><td></td>
+                </td><td id="cfw2"></td><td id="vftw2"></td>
             </tr>
             <tr>
                 <td></td><td></td><td>OR</td><td></td><td></td>
             </tr>
             <tr>
                 <td>Area</td>
-                <td><input type="number" size="15" min="0" max="10000000"> </td>
+                <td><input type="number" size="15" min="0" max="10000000" id="ar2"> </td>
                 <td>
-                    <select>
+                    <select id="cova2">
                         <option value="ac">Acre(s)</option>
                         <option value="hacre">Hectare(s)</option>
                         <option value="ft">Square Feet</option>
@@ -249,21 +250,22 @@
                         <option value="mi">Square Mile(s)</option>
                         <option value="yard">Square Yard(s)</option>
                     </select>
-                </td><td></td><td></td>
+                </td><td id="cfa2"></td><td id="vfta2"></td>
             </tr>
             <tr>
                 <td></td><td></td><td>AND</td><td></td><td></td>
             </tr>
             <tr>
                 <td>Multiplier</td>
-                <td><input type="number" size="15" value="1.0" min="0" max="10000000"> </td>
+                <td><input type="number" size="15" value="1.0" min="0" max="10000000" id="m2"> </td>
                 <td></td><td></td><td></td>
             </tr>
             <tr>
                 <td>Is the slope of this area <br>steeper than 3:1<br> (33.3% grade)?</td>
                 <td><td></td><td></td>
                 <td>
-                    <select>
+                    <select id="nymow2">
+                        <option>---</option>
                         <option>Yes</option>
                         <option>No</option>
                     </select>
@@ -271,8 +273,8 @@
             </tr>
             <tr>
                 <td>Area 2 Total:</td>
-                <td>Please Select Units</td>
-                <td>Please answer question about slopes</td><td></td><td></td>
+                <td><span id="total-area2">Please Select Units</span></td>
+                <td id="mow2">Please answer question about slopes</td><td></td><td></td>
             </tr>
             </tbody>
         </table>
@@ -284,9 +286,9 @@
             <tbody>
             <tr>
                 <td>Length</td>
-                <td><input type="number" size="15" min="0" max="10000000"> </td>
+                <td><input type="number" size="15" min="0" max="10000000" id="lng3"> </td>
                 <td>
-                    <select>
+                    <select id="covl3">
                         <option>foot (feet)</option>
                         <option>mile(s)</option>
                         <option>kilometer(s)</option>
@@ -294,52 +296,53 @@
                         <option>yard(s)</option>
                     </select>
                 </td>
-                <td></td><td></td>
+                <td id="cfl3"></td><td id="vftl3"></td>
             </tr>
             <tr>
                 <td>Width</td>
-                <td><input type="number" size="15" min="0" max="10000000"> </td>
+                <td><input type="number" size="15" min="0" max="10000000" id="wi3"> </td>
                 <td>
-                    <select>
+                    <select id="covw3">
                         <option>foot (feet)</option>
                         <option>mile(s)</option>
                         <option>kilometer(s)</option>
                         <option>meter(s)</option>
                         <option>yard(s)</option>
                     </select>
-                </td><td></td><td></td>
+                </td><td id="cfw3"></td><td id="vftw3"></td>
             </tr>
             <tr>
                 <td></td><td></td><td>OR</td><td></td><td></td>
             </tr>
             <tr>
                 <td>Area</td>
-                <td><input type="number" size="15" min="0" max="10000000"> </td>
+                <td><input type="number" size="15" min="0" max="10000000" id="ar3"> </td>
                 <td>
-                    <select>
+                    <select id="cova3">
                         <option value="ac">Acre(s)</option>
                         <option value="hacre">Hectare(s)</option>
-                        <option value="ft">Square Feet</option>
+                        <option value="ft" selected="selected">Square Feet</option>
                         <option value="sk">Square Kilometer(s)</option>
                         <option value="met">Square Meter(s)</option>
                         <option value="mi">Square Mile(s)</option>
                         <option value="yard">Square Yard(s)</option>
                     </select>
-                </td><td></td><td></td>
+                </td><td id="cfa3"></td><td id="vfta3"></td>
             </tr>
             <tr>
                 <td></td><td></td><td>AND</td><td></td><td></td>
             </tr>
             <tr>
                 <td>Multiplier</td>
-                <td><input type="number" size="15" value="1.0" min="0" max="10000000"> </td>
+                <td><input type="number" size="15" value="1.0" min="0" max="10000000" id="m3"> </td>
                 <td></td><td></td><td></td>
             </tr>
             <tr>
                 <td>Is the slope of this area <br>steeper than 3:1<br> (33.3% grade)?</td>
                 <td><td></td><td></td>
                 <td>
-                    <select>
+                    <select id="nymow3">
+                        <option>---</option>
                         <option>Yes</option>
                         <option>No</option>
                     </select>
@@ -347,8 +350,8 @@
             </tr>
             <tr>
                 <td>Area 3 Total:</td>
-                <td>Please Select Units</td>
-                <td>Please answer question about slopes</td><td></td><td></td>
+                <td><span id="total-area3">Please Select Units</span></td>
+                <td id="mow3">Please answer question about slopes</td><td></td><td></td>
             </tr>
             </tbody>
         </table>
@@ -360,9 +363,9 @@
             <tbody>
             <tr>
                 <td>Length</td>
-                <td><input type="number" size="15" min="0" max="10000000"> </td>
+                <td><input type="number" size="15" min="0" max="10000000" id="lng4"> </td>
                 <td>
-                    <select>
+                    <select id="covl4">
                         <option>foot (feet)</option>
                         <option>mile(s)</option>
                         <option>kilometer(s)</option>
@@ -370,52 +373,53 @@
                         <option>yard(s)</option>
                     </select>
                 </td>
-                <td></td><td></td>
+                <td id="cfl4"></td><td id="vftl4"></td>
             </tr>
             <tr>
                 <td>Width</td>
-                <td><input type="number" size="15" min="0" max="10000000"> </td>
+                <td><input type="number" size="15" min="0" max="10000000" id="wi4"> </td>
                 <td>
-                    <select>
+                    <select id="covw4">
                         <option>foot (feet)</option>
                         <option>mile(s)</option>
                         <option>kilometer(s)</option>
                         <option>meter(s)</option>
                         <option>yard(s)</option>
                     </select>
-                </td><td></td><td></td>
+                </td><td id="cfw4"></td><td id="vftw4"></td>
             </tr>
             <tr>
                 <td></td><td></td><td>OR</td><td></td><td></td>
             </tr>
             <tr>
                 <td>Area</td>
-                <td><input type="number" size="15" min="0" max="10000000"> </td>
+                <td><input type="number" size="15" min="0" max="10000000" id="ar4"> </td>
                 <td>
-                    <select>
+                    <select id="cova4">
                         <option value="ac">Acre(s)</option>
                         <option value="hacre">Hectare(s)</option>
-                        <option value="ft">Square Feet</option>
+                        <option value="ft" selected="selected">Square Feet</option>
                         <option value="sk">Square Kilometer(s)</option>
                         <option value="met">Square Meter(s)</option>
                         <option value="mi">Square Mile(s)</option>
                         <option value="yard">Square Yard(s)</option>
                     </select>
-                </td><td></td><td></td>
+                </td><td id="cfa4"></td><td id="vfta4"></td>
             </tr>
             <tr>
                 <td></td><td></td><td>AND</td><td></td><td></td>
             </tr>
             <tr>
                 <td>Multiplier</td>
-                <td><input type="number" size="15" value="1.0" min="0" max="10000000"> </td>
+                <td><input type="number" size="15" value="1.0" min="0" max="10000000" id="m4"> </td>
                 <td></td><td></td><td></td>
             </tr>
             <tr>
                 <td>Is the slope of this area <br>steeper than 3:1<br> (33.3% grade)?</td>
                 <td><td></td><td></td>
                 <td>
-                    <select>
+                    <select id="nymow4">
+                        <option>---</option>
                         <option>Yes</option>
                         <option>No</option>
                     </select>
@@ -423,8 +427,8 @@
             </tr>
             <tr>
                 <td>Area 4 Total:</td>
-                <td>Please Select Units</td>
-                <td>Please answer question about slopes</td><td></td><td></td>
+                <td><span id="total-area4">Please Select Units</span></td>
+                <td id="mow4">Please answer question about slopes</td><td></td><td></td>
             </tr>
             </tbody>
         </table>
@@ -436,9 +440,9 @@
             <tbody>
             <tr>
                 <td>Length</td>
-                <td><input type="number" size="15" min="0" max="10000000"> </td>
+                <td><input type="number" size="15" min="0" max="10000000" id="lng5"> </td>
                 <td>
-                    <select>
+                    <select id="covl5">
                         <option>foot (feet)</option>
                         <option>mile(s)</option>
                         <option>kilometer(s)</option>
@@ -446,52 +450,53 @@
                         <option>yard(s)</option>
                     </select>
                 </td>
-                <td></td><td></td>
+                <td id="cfl5"></td><td id="vftl5"></td>
             </tr>
             <tr>
                 <td>Width</td>
-                <td><input type="number" size="15" min="0" max="10000000"> </td>
+                <td><input type="number" size="15" min="0" max="10000000" id="wi5"> </td>
                 <td>
-                    <select>
+                    <select id="covw5">
                         <option>foot (feet)</option>
                         <option>mile(s)</option>
                         <option>kilometer(s)</option>
                         <option>meter(s)</option>
                         <option>yard(s)</option>
                     </select>
-                </td><td></td><td></td>
+                </td><td id="cfw5"></td><td id="vftw5"></td>
             </tr>
             <tr>
                 <td></td><td></td><td>OR</td><td></td><td></td>
             </tr>
             <tr>
                 <td>Area</td>
-                <td><input type="number" size="15" min="0" max="10000000"> </td>
+                <td><input type="number" size="15" min="0" max="10000000" id="ar5"> </td>
                 <td>
-                    <select>
+                    <select id="cova5">
                         <option value="ac">Acre(s)</option>
                         <option value="hacre">Hectare(s)</option>
-                        <option value="ft">Square Feet</option>
+                        <option value="ft" selected="selected">Square Feet</option>
                         <option value="sk">Square Kilometer(s)</option>
                         <option value="met">Square Meter(s)</option>
                         <option value="mi">Square Mile(s)</option>
                         <option value="yard">Square Yard(s)</option>
                     </select>
-                </td><td></td><td></td>
+                </td><td id="cfa5"></td><td id="vfta5"></td>
             </tr>
             <tr>
                 <td></td><td></td><td>AND</td><td></td><td></td>
             </tr>
             <tr>
                 <td>Multiplier</td>
-                <td><input type="number" size="15" value="1.0" min="0" max="10000000"> </td>
+                <td><input type="number" size="15" value="1.0" min="0" max="10000000" id="m5"> </td>
                 <td></td><td></td><td></td>
             </tr>
             <tr>
                 <td>Is the slope of this area <br>steeper than 3:1<br> (33.3% grade)?</td>
                 <td><td></td><td></td>
                 <td>
-                    <select>
+                    <select id="nymow5">
+                        <option>---</option>
                         <option>Yes</option>
                         <option>No</option>
                     </select>
@@ -499,8 +504,8 @@
             </tr>
             <tr>
                 <td>Area 5 Total:</td>
-                <td>Please Select Units</td>
-                <td>Please answer question about slopes</td><td></td><td></td>
+                <td><span id="total-area5">Please Select Units</span></td>
+                <td id="mow5">Please answer question about slopes</td><td></td><td></td>
             </tr>
             </tbody>
         </table>
