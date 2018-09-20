@@ -41,12 +41,7 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.dropdown-toggle').dropdown();
-        });
-    </script>
-
+    <script src="js/form.js"></script>
     <![endif]-->
 </head>
 
@@ -170,7 +165,7 @@
     <table class="table-body">
         <tr>
             <td style="width: 10%;">Project Description: </td>
-            <td><input type="text" name="pro-name" size="120" style="background: yellow"></td>
+            <td><input type="text" name="pro-name" size="50" style="background: yellow"></td>
         </tr>
         <tr>
             <td style="width: 10%;">File Location: </td>
@@ -236,15 +231,15 @@
             </tr>
             <tr>
                 <td>4b. If soil samples were analyzed, how many will be entered here?</td>
-                <td><input type="number" name="pro-name" size="25" style="background: cornflowerblue"></td>
+                <td><input type="number" name="pro-name" size="25" min="0" style="background: cornflowerblue"></td>
             </tr>
             <tr>
                 <td>5. How many core seed mixes will be used on this project?</td>
-                <td><input type="number" name="pro-name" size="25" style="background: cornflowerblue"></td>
+                <td><input type="number" name="pro-name" size="25" min="0" style="background: cornflowerblue"></td>
             </tr>
             <tr>
                 <td>6. How large is the area that will receive temporary seed?</td>
-                <td><input type="number" name="pro-name" size="25" style="background: yellow"></td>
+                <td><input type="number" name="pro-name" size="25" min="0" style="background: yellow"></td>
                 <td>
                     <select style="background: lightgray;">
                         <option value="ac">Acre(s)</option>
@@ -278,18 +273,18 @@
             <tr>
                 <td>7b. How deep should the layer of topsoil be (in inches)?</td>
                 <td>
-                    <input type="number" name="pro-name" size="25" style="background: cornflowerblue">
+                    <input type="number" name="pro-name" size="25" min="0" style="background: cornflowerblue" min="0" max="36">
                 </td>
                 <td>inches</td>
             </tr>
             <tr>
                 <td>7c. How large is the area that will receive Topsoil?</td>
-                <td><input type="number" name="pro-name" size="25" style="background: lightgreen"></td>
-                <td><input type="number" name="pro-name" size="25" style="background: lightgreen"></td>
+                <td><input type="number" name="pro-name" size="25" min="0" style="background: lightgreen"></td>
+                <td><input type="number" name="pro-name" size="25" min="0" style="background: lightgreen"></td>
             </tr>
             <tr>
                 <td>8. Total area of regular seed (based on entries below):</td>
-                <td><input type="number" name="pro-name" size="25"></td>
+                <td><input type="number" name="pro-name" min="0" size="25"></td>
                 <td>
                     <select style="background: lightgray;">
                         <option value="ac">Acre(s)</option>
@@ -310,12 +305,12 @@
             <tr>
                 <td>1. Please enter a description of the area receiving Core Mix #1
                     (e.g. Urban, Rural, Project 1, Smith Parcel, National Park Land, etc.)</td>
-                <td><input type="number" name="pro-name" size="25" style="background: cornflowerblue"></td>
+                <td><input type="text" name="pro-name" size="25" style="background: cornflowerblue"></td>
             </tr>
             <tr>
                 <td>2a. How large is the area that will receive regular seed?</td>
                 <td><button class="btn btn-primary"><a href="calc.html">Area Calculator</a></button></td>
-                <td><input type="number" name="pro-name" size="25" style="background: yellow"></td>
+                <td><input type="number" name="pro-name" size="25" min="0" style="background: yellow"></td>
                 <td>
                     <select style="background: lightgray;">
                         <option value="ac">Acre(s)</option>
@@ -330,7 +325,7 @@
             </tr>
             <tr>
                 <td>2b. How much of the area receiving Regular Seed has slopes equal to or flatter than 3:1? (This area is the "Mowed Area")</td>
-                <td><input type="number" name="pro-name" size="25" style="background: yellow"></td>
+                <td><input type="number" name="pro-name" size="25" min="0" style="background: yellow"></td>
                 <td>
                     <select style="background: lightgray;">
                         <option value="ac">Acre(s)</option>
@@ -355,7 +350,7 @@
             </tr>
             <tr>
                 <td>2d. How much of the area receiving Regular Seed has slopes that steeper than 3:1? (This area is the "Non-Mowed Area", aka "Slopes")</td>
-                <td><input type="number" name="pro-name" size="25" style="background: yellow"></td>
+                <td><input type="number" name="pro-name" size="25" min="0" style="background: yellow"></td>
                 <td>
                     <select style="background: lightgray;">
                         <option value="ac">Acre(s)</option>
@@ -370,7 +365,7 @@
             </tr>
             <tr>
                 <td>2e. What is the steepest gradient of the area with slopes steeper than 3:1? ("Non-Mowed Area" aka "Slopes")</td>
-                <td><td><input type="number" name="pro-name" size="25" style="background: yellow"></td></td>
+                <td><td><input type="number" name="pro-name" size="25" min="0" style="background: yellow"></td></td>
                 <td>
                     <select style="background: lightgray">
                         <option value="slope">Slope (Ratio: 3:1)</option>
@@ -380,11 +375,11 @@
             </tr>
             <tr>
                 <td>3. Does this area include both Urban and Rural sections?  <OR> Does this area contain sections with an adjusted seed application rate?</td>
-                <td><input type="number" name="pro-name" size="25" style="background: cornflowerblue"></td>
+                <td><input type="number" name="pro-name" size="25" min="0" style="background: cornflowerblue"></td>
             </tr>
             <tr>
                 <td>3a. How much of the area with adjusted rates (urban) is mowed? (≤ 3:1)</td>
-                <td><input type="number" name="pro-name" size="25" style="background: lightgreen"></td>
+                <td><input type="number" name="pro-name" size="25" min="0" style="background: lightgreen"></td>
                 <td>
                     <select style="background: lightgray;">
                         <option value="ac">Acre(s)</option>
@@ -399,7 +394,7 @@
             </tr>
             <tr>
                 <td>3b. How much of the area with adjusted rates is NOT mowed? (> 3:1)</td>
-                <td><input type="number" name="pro-name" size="25" style="background: lightgreen"></td>
+                <td><input type="number" name="pro-name" size="25" min="0" style="background: lightgreen"></td>
                 <td>
                     <select style="background: lightgray;">
                         <option value="ac">Acre(s)</option>
@@ -414,7 +409,7 @@
             </tr>
             <tr>
                 <td>3c. What adjustment factor should be applied? (Typ. 2x for Urban Areas)</td>
-                <td><input type="number" name="pro-name" size="25" style="background: cornflowerblue"></td>
+                <td><input type="number" name="pro-name" size="25" min="0" max="10" style="background: cornflowerblue"></td>
                 <td>x Normal Rate</td>
             </tr>
         </tbody>

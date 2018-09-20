@@ -124,10 +124,11 @@ table.table-body tr td {
 table.table-body tr td input {
     height: 10px;
     font-size: small;
-    display: inline;
+    display: inline-block;
     position: relative;
     top: 7px;
     border: none;
+    overflow-x: hidden;
 }
 
 table.table-body tr td button {

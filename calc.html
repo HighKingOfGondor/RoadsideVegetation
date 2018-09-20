@@ -10,6 +10,8 @@
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="css/acrp0911.css" rel="stylesheet">
     <link href="css/vdot.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/calc.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -122,7 +124,7 @@
                 </table>
             </div>
         </div>
-        <table class="core-mix">
+        <table class="core-mix"><a name="area1"></a>
             <caption>Core Mix #1</caption>
             <thead>
             <th>Measurement</th><th>Value</th><th>Units</th><th>Conversion Factor</th><th>Value in FT</th>
@@ -130,9 +132,9 @@
             <tbody>
             <tr>
                 <td>Length</td>
-                <td><input type="number" size="15"> </td>
+                <td><input type="number" size="15" min="0" max="10000000" id="lng1"> </td>
                 <td>
-                    <select>
+                    <select id="covl1">
                         <option>foot (feet)</option>
                         <option>mile(s)</option>
                         <option>kilometer(s)</option>
@@ -140,52 +142,52 @@
                         <option>yard(s)</option>
                     </select>
                 </td>
-                <td></td><td></td>
+                <td id="cfl1"></td><td id="vftl1"></td>
             </tr>
             <tr>
                 <td>Width</td>
-                <td><input type="number" size="15"> </td>
+                <td><input type="number" size="15" min="0" max="10000000" id="wi1"> </td>
                 <td>
-                    <select>
+                    <select id="covw1">
                         <option>foot (feet)</option>
                         <option>mile(s)</option>
                         <option>kilometer(s)</option>
                         <option>meter(s)</option>
                         <option>yard(s)</option>
                     </select>
-                </td><td></td><td></td>
+                </td><td id="cfw1"></td><td id="vftw1"></td>
             </tr>
             <tr>
                 <td></td><td></td><td>OR</td><td></td><td></td>
             </tr>
             <tr>
                 <td>Area</td>
-                <td><input type="number" size="15"> </td>
+                <td><input type="number" size="15" min="0" max="10000000" id="ar1"> </td>
                 <td>
-                    <select>
+                    <select id="cova1">
                         <option value="ac">Acre(s)</option>
                         <option value="hacre">Hectare(s)</option>
-                        <option value="ft">Square Feet</option>
+                        <option value="ft" selected="selected">Square Feet</option>
                         <option value="sk">Square Kilometer(s)</option>
                         <option value="met">Square Meter(s)</option>
                         <option value="mi">Square Mile(s)</option>
                         <option value="yard">Square Yard(s)</option>
                     </select>
-                </td><td></td><td></td>
+                </td><td id="cfa1"></td><td id="vfta1"></td>
             </tr>
             <tr>
                 <td></td><td></td><td>AND</td><td></td><td></td>
             </tr>
             <tr>
                 <td>Multiplier</td>
-                <td><input type="number" size="15" value="1.0"> </td>
+                <td><input type="number" size="15" value="1.0" min="0" max="10000000" id="m1"> </td>
                 <td></td><td></td><td></td>
             </tr>
             <tr>
                 <td>Is the slope of this area <br>steeper than 3:1<br> (33.3% grade)?</td>
                 <td><td></td><td></td>
                 <td>
-                    <select>
+                    <select id="nymow1">
                         <option>Yes</option>
                         <option>No</option>
                     </select>
@@ -198,7 +200,7 @@
             </tr>
             </tbody>
         </table>
-        <table class="core-mix">
+        <table class="core-mix"><a name="area2"></a>
             <caption>Core Mix #2</caption>
             <thead>
             <th>Measurement</th><th>Value</th><th>Units</th><th>Conversion Factor</th><th>Value in FT</th>
@@ -206,7 +208,7 @@
             <tbody>
             <tr>
                 <td>Length</td>
-                <td><input type="number" size="15"> </td>
+                <td><input type="number" size="15" min="0" max="10000000"> </td>
                 <td>
                     <select>
                         <option>foot (feet)</option>
@@ -220,7 +222,7 @@
             </tr>
             <tr>
                 <td>Width</td>
-                <td><input type="number" size="15"> </td>
+                <td><input type="number" size="15" min="0" max="10000000"> </td>
                 <td>
                     <select>
                         <option>foot (feet)</option>
@@ -236,7 +238,7 @@
             </tr>
             <tr>
                 <td>Area</td>
-                <td><input type="number" size="15"> </td>
+                <td><input type="number" size="15" min="0" max="10000000"> </td>
                 <td>
                     <select>
                         <option value="ac">Acre(s)</option>
@@ -254,7 +256,7 @@
             </tr>
             <tr>
                 <td>Multiplier</td>
-                <td><input type="number" size="15" value="1.0"> </td>
+                <td><input type="number" size="15" value="1.0" min="0" max="10000000"> </td>
                 <td></td><td></td><td></td>
             </tr>
             <tr>
@@ -274,7 +276,7 @@
             </tr>
             </tbody>
         </table>
-        <table class="core-mix">
+        <table class="core-mix"><a name="area3"></a>
             <caption>Core Mix #3</caption>
             <thead>
             <th>Measurement</th><th>Value</th><th>Units</th><th>Conversion Factor</th><th>Value in FT</th>
@@ -282,7 +284,7 @@
             <tbody>
             <tr>
                 <td>Length</td>
-                <td><input type="number" size="15"> </td>
+                <td><input type="number" size="15" min="0" max="10000000"> </td>
                 <td>
                     <select>
                         <option>foot (feet)</option>
@@ -296,7 +298,7 @@
             </tr>
             <tr>
                 <td>Width</td>
-                <td><input type="number" size="15"> </td>
+                <td><input type="number" size="15" min="0" max="10000000"> </td>
                 <td>
                     <select>
                         <option>foot (feet)</option>
@@ -312,7 +314,7 @@
             </tr>
             <tr>
                 <td>Area</td>
-                <td><input type="number" size="15"> </td>
+                <td><input type="number" size="15" min="0" max="10000000"> </td>
                 <td>
                     <select>
                         <option value="ac">Acre(s)</option>
@@ -330,7 +332,7 @@
             </tr>
             <tr>
                 <td>Multiplier</td>
-                <td><input type="number" size="15" value="1.0"> </td>
+                <td><input type="number" size="15" value="1.0" min="0" max="10000000"> </td>
                 <td></td><td></td><td></td>
             </tr>
             <tr>
@@ -350,7 +352,7 @@
             </tr>
             </tbody>
         </table>
-        <table class="core-mix">
+        <table class="core-mix"><a name="area4"></a>
             <caption>Core Mix #4</caption>
             <thead>
             <th>Measurement</th><th>Value</th><th>Units</th><th>Conversion Factor</th><th>Value in FT</th>
@@ -358,7 +360,7 @@
             <tbody>
             <tr>
                 <td>Length</td>
-                <td><input type="number" size="15"> </td>
+                <td><input type="number" size="15" min="0" max="10000000"> </td>
                 <td>
                     <select>
                         <option>foot (feet)</option>
@@ -372,7 +374,7 @@
             </tr>
             <tr>
                 <td>Width</td>
-                <td><input type="number" size="15"> </td>
+                <td><input type="number" size="15" min="0" max="10000000"> </td>
                 <td>
                     <select>
                         <option>foot (feet)</option>
@@ -388,7 +390,7 @@
             </tr>
             <tr>
                 <td>Area</td>
-                <td><input type="number" size="15"> </td>
+                <td><input type="number" size="15" min="0" max="10000000"> </td>
                 <td>
                     <select>
                         <option value="ac">Acre(s)</option>
@@ -406,7 +408,7 @@
             </tr>
             <tr>
                 <td>Multiplier</td>
-                <td><input type="number" size="15" value="1.0"> </td>
+                <td><input type="number" size="15" value="1.0" min="0" max="10000000"> </td>
                 <td></td><td></td><td></td>
             </tr>
             <tr>
@@ -426,7 +428,7 @@
             </tr>
             </tbody>
         </table>
-        <table class="core-mix">
+        <table class="core-mix"><a name="area5"></a>
             <caption>Core Mix #5</caption>
             <thead>
             <th>Measurement</th><th>Value</th><th>Units</th><th>Conversion Factor</th><th>Value in FT</th>
@@ -434,7 +436,7 @@
             <tbody>
             <tr>
                 <td>Length</td>
-                <td><input type="number" size="15"> </td>
+                <td><input type="number" size="15" min="0" max="10000000"> </td>
                 <td>
                     <select>
                         <option>foot (feet)</option>
@@ -448,7 +450,7 @@
             </tr>
             <tr>
                 <td>Width</td>
-                <td><input type="number" size="15"> </td>
+                <td><input type="number" size="15" min="0" max="10000000"> </td>
                 <td>
                     <select>
                         <option>foot (feet)</option>
@@ -464,7 +466,7 @@
             </tr>
             <tr>
                 <td>Area</td>
-                <td><input type="number" size="15"> </td>
+                <td><input type="number" size="15" min="0" max="10000000"> </td>
                 <td>
                     <select>
                         <option value="ac">Acre(s)</option>
@@ -482,7 +484,7 @@
             </tr>
             <tr>
                 <td>Multiplier</td>
-                <td><input type="number" size="15" value="1.0"> </td>
+                <td><input type="number" size="15" value="1.0" min="0" max="10000000"> </td>
                 <td></td><td></td><td></td>
             </tr>
             <tr>
@@ -501,6 +503,51 @@
                 <td>Please answer question about slopes</td><td></td><td></td>
             </tr>
             </tbody>
+        </table>
+        <br><br><br>
+        <table class="core-mix">
+            <tr>
+                <td>
+                    <a href="#area1"> Area 1 Total:</a>
+                </td>
+                <td id="area1total1"></td><td id="area1total2"></td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#area2"> Area 2 Total:</a>
+                </td>
+                <td id="area2total1"></td><td id="area2total2"></td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#area3"> Area 3 Total:</a>
+                </td>
+                <td id="area3total1"></td><td id="area3total2"></td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#area4"> Area 4 Total:</a>
+                </td>
+                <td id="area4total1"></td><td id="area4total2"></td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#area5"> Area 5 Total:</a>
+                </td>
+                <td id="area5total1"></td><td id="area5total2"></td>
+            </tr>
+            <tr>
+                <td>Total Area Calculated</td>
+                <td id="totalcal1">Check Entries</td><td id="totalcal2">Check Entries</td>
+            </tr>
+            <tr>
+                <td>Total Mow Area</td>
+                <td id="totalmowarea1">Check Entries</td><td id="totalmowarea2">Check Entries</td>
+            </tr>
+            <tr>
+                <td>Total Non-Mow Area</td>
+                <td id="totalnonmowarea1">Check Entries</td><td id="totalnonmowarea2">Check Entries</td>
+            </tr>
         </table>
     </div>
 
