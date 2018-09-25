@@ -89,7 +89,7 @@ $(document).ready(function () {
             conversionFactor1 = 10763911;
         } else if (name === "Square Meter(s)") {
             conversionFactor1 = 10.76;
-        } else if (name === "Square Miles") {
+        } else if (name === "Square Mile(s)") {
             conversionFactor1 = 27878400;
         } else if (name === "Square Yard(s)") {
             conversionFactor1 = 9;
@@ -243,7 +243,7 @@ $(document).ready(function () {
             conversionFactor1 = 10763911;
         } else if (name === "Square Meter(s)") {
             conversionFactor1 = 10.76;
-        } else if (name === "Square Miles") {
+        } else if (name === "Square Mile(s)") {
             conversionFactor1 = 27878400;
         } else if (name === "Square Yard(s)") {
             conversionFactor1 = 9;
@@ -397,7 +397,7 @@ $(document).ready(function () {
             conversionFactor3 = 10763911;
         } else if (name === "Square Meter(s)") {
             conversionFactor3 = 10.76;
-        } else if (name === "Square Miles") {
+        } else if (name === "Square Mile(s)") {
             conversionFactor3 = 27878400;
         } else if (name === "Square Yard(s)") {
             conversionFactor3 = 9;
@@ -551,7 +551,7 @@ $(document).ready(function () {
             conversionFactor4 = 10763911;
         } else if (name === "Square Meter(s)") {
             conversionFactor4 = 10.76;
-        } else if (name === "Square Miles") {
+        } else if (name === "Square Mile(s)") {
             conversionFactor4 = 27878400;
         } else if (name === "Square Yard(s)") {
             conversionFactor4 = 9;
@@ -705,7 +705,7 @@ $(document).ready(function () {
             conversionFactor5 = 10763911;
         } else if (name === "Square Meter(s)") {
             conversionFactor5 = 10.76;
-        } else if (name === "Square Miles") {
+        } else if (name === "Square Mile(s)") {
             conversionFactor5 = 27878400;
         } else if (name === "Square Yard(s)") {
             conversionFactor5 = 9;
@@ -850,4 +850,35 @@ $(document).ready(function () {
         }
         return total;
     }
+
 });
+
+
+
+
+//********************************************************************************************//
+//**************************   BUTTON FUNCTIONS   ********************************************//
+//********************************************************************************************//
+
+function backWithNoResults () {
+    window.location.href = "vdot.html#calc";
+}
+
+function backWithResults () {
+    var obj = '{ "coreMixTotals" : [' +
+        parseFloat($('#total-area1').val()) + ',' + parseFloat($('#total-area2').val()) + ',' +
+        parseFloat($('#total-area3').val()) + ',' + parseFloat($('#total-area4').val()) + ',' +
+        parseFloat($('#total-area5').val()) + '],' +
+        '"areaTotals" : {' +
+        '"totalArea" : {"SF" : ' + $('#totalcal1').val() + ', "AC" :' + $('#totalcal2').val() + '},' +
+        '"totalMowArea" : {"SF" : ' + $('#totalmowarea1').val() + ', "AC" :' + $('#totalmowarea2').val() + '},' +
+        '"totalNonMowArea" : {"SF" : ' + $('#totalnonmowarea1').val() + ', "AC" :' + $('#totalnonmowarea2').val() + '}}}';
+    var json = JSON.parse(obj);
+    //send json to server
+}
+
+function clearEntries () {
+    $('table.core-mix td input').each(function () {
+        $(this).val('');
+    })
+}
