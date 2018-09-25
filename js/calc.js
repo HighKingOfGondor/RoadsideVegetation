@@ -35,8 +35,8 @@ $(document).ready(function () {
             $('#vfta1').text($('#cfa1').val() * $(this).val())
                 .val($('#cfa1').val() * $(this).val());
         }
-        $('#total-area1').text($('#cfa1').val() * $('#vfta1').val())
-            .val($('#cfa1').val() * $('#vfta1').val());
+        $('#total-area1').text($("#m1").val() * $('#vfta1').val())
+            .val($("#m1").val() * $('#vfta1').val());
     });
     //disable area fields when w/l is used
     $('#lng1, #wi1').on('change paste keyup', function (e) {
@@ -49,7 +49,7 @@ $(document).ready(function () {
         }
     });
     //calculate for value in ft field
-    $('#lng1').on('change keyup input', function() {
+    $('#lng1').on('change keyup input', function() {  //on change length
         if($('#cfl1').val() === "") {
             $('#vftl1').text($(this).val())
                 .val($(this).val());
@@ -58,10 +58,11 @@ $(document).ready(function () {
                 .val($('#cfl1').val() * $(this).val());
         }
         if (($('#vftw1').val().length != 0) && ($('#vftl1').val().length != 0)) {
-            $('#total-area1').text(($('#vftl1').val() * $('#vftw1').val()) + " Sq. Ft").val($('#vftl1').val() * $('#vftw1').val());
+            $('#total-area1').text(($("#m1").val() * $('#vftl1').val() * $('#vftw1').val()) + " Sq. Ft")
+                .val($('#vftl1').val() * $('#vftw1').val() * $("#m1").val());
         }
     });
-    $('#wi1').on('change keyup input', function() {
+    $('#wi1').on('change keyup input', function() {  //on change width
         if($('#cfw1').val() === "") {
             $('#vftw1').text($(this).val())
                 .val($(this).val());
@@ -71,11 +72,12 @@ $(document).ready(function () {
         }
         //change total, maybe
         if (($('#vftw1').val().length != 0) && ($('#vftl1').val().length != 0)) {
-            $('#total-area1').text(($('#vftl1').val() * $('#vftw1').val()) + " Sq. Ft").val($('#vftl1').val() * $('#vftw1').val());
+            $('#total-area1').text(($("#m1").val() * $('#vftl1').val() * $('#vftw1').val()) + " Sq. Ft")
+                .val($('#vftl1').val() * $('#vftw1').val() * $("#m1").val());
         }
     });
     //calculate for conversion factor
-    $('#cova1').change(function () {
+    $('#cova1').change(function () {  //area
         var name = $('#cova1').find(":selected").text();
         if (name === "Acre(s)") {
             conversionFactor1 = 43560;
@@ -96,10 +98,10 @@ $(document).ready(function () {
         $('#vfta1').val(conversionFactor1 * $('#ar1').val());
         $('#cfa1').text(conversionFactor1);
         $('#vfta1').text(conversionFactor1 * $('#ar1').val());
-        $('#total-area1').text($('#cfa1').val() * $('#vfta1').val())
-            .val($('#cfa1').val() * $('#vfta1').val());
+        $('#total-area1').text($("#m1").val() * $('#vfta1').val())
+            .val($("#m1").val() * $('#vfta1').val());
     });
-    $('#covl1').change(function () {
+    $('#covl1').change(function () {  //length
         var name = $('#covl1').find(":selected").text();
         if (name === "foot (feet)") {
             conversionFactor1 = 1;
@@ -115,10 +117,11 @@ $(document).ready(function () {
         $('#cfl1').text(conversionFactor1).val(conversionFactor1);
         $('#vftl1').text(conversionFactor1 * $('#lng1').val()).val(conversionFactor1 * $('#lng1').val());
         if (($('#vftw1').val().length != 0) && ($('#vftl1').val().length != 0)) {
-            $('#total-area1').text(($('#vftl1').val() * $('#vftw1').val()) + " Sq. Ft").val($('#vftl1').val() * $('#vftw1').val());
+            $('#total-area1').text(($('#vftl1').val() * $('#vftw1').val() * $("#m1").val()) + " Sq. Ft")
+                .val($('#vftl1').val() * $('#vftw1').val() * $("#m1").val());
         }
     });
-    $('#covw1').change(function () {
+    $('#covw1').change(function () {  //width
         var name = $('#covw1').find(":selected").text();
         if (name === "foot (feet)") {
             conversionFactor1 = 1;
@@ -134,7 +137,19 @@ $(document).ready(function () {
         $('#cfw1').text(conversionFactor1).val(conversionFactor1);
         $('#vftw1').text(conversionFactor1 * $('#wi1').val()).val(conversionFactor1 * $('#wi1').val());
         if (($('#vftw1').val().length != 0) && ($('#vftl1').val().length != 0)) {
-            $('#total-area1').text(($('#vftl1').val() * $('#vftw1').val()) + " Sq. Ft").val($('#vftl1').val() * $('#vftw1').val());
+            $('#total-area1').text(($('#vftl1').val() * $('#vftw1').val() * $("#m1").val()) + " Sq. Ft")
+                .val($('#vftl1').val() * $('#vftw1').val() * $("#m1").val());
+        }
+    });
+
+    //change multiplier
+    $("#m1").on("change keyup input", function () {
+        if ($('#vfta1').val() === "") {
+            $("#total-area1").val($("#m1").val() * $("#vftl1").val() * $("#vftw1").val())
+                .text($("#m1").val() * $("#vftl1").val() * $("#vftw1").val() + " Sq. Ft");
+        } else {
+            $("#total-area1").val($("#m1").val() * $("#vfta1").val())
+                .text($("#m1").val() * $("#vfta1").val() + " Sq. Ft");
         }
     });
     //mow or not
@@ -174,8 +189,8 @@ $(document).ready(function () {
             $('#vfta2').text($('#cfa2').val() * $(this).val())
                 .val($('#cfa2').val() * $(this).val());
         }
-        $('#total-area2').text($('#cfa2').val() * $('#vfta2').val())
-            .val($('#cfa2').val() * $('#vfta2').val());
+        $('#total-area2').text($('#m2').val() * $('#vfta2').val())
+            .val($('#m2').val() * $('#vfta2').val());
     });
     //disable area fields when w/l is used
     $('#lng2, #wi2').on('change paste keyup', function (e) {
@@ -197,7 +212,8 @@ $(document).ready(function () {
                 .val($('#cfl2').val() * $(this).val());
         }
         if (($('#vftw2').val().length != 0) && ($('#vftl2').val().length != 0)) {
-            $('#total-area2').text(($('#vftl2').val() * $('#vftw2').val()) + " Sq. Ft").val($('#vftl2').val() * $('#vftw2').val());
+            $('#total-area2').text(($('#vftl2').val() * $('#vftw2').val() * $("#m2").val()) + " Sq. Ft")
+                .val($('#vftl2').val() * $('#vftw2').val() * $("#m2").val());
         }
     });
     $('#wi2').on('change keyup input', function() {
@@ -210,7 +226,8 @@ $(document).ready(function () {
         }
         //change total, maybe
         if (($('#vftw2').val().length != 0) && ($('#vftl2').val().length != 0)) {
-            $('#total-area2').text(($('#vftl2').val() * $('#vftw1').val()) + " Sq. Ft").val($('#vftl2').val() * $('#vftw2').val());
+            $('#total-area2').text(($('#vftl2').val() * $('#vftw1').val() * $("#m2").val()) + " Sq. Ft")
+                .val($('#vftl2').val() * $('#vftw2').val() * $("#m2").val());
         }
     });
     //calculate for conversion factor
@@ -235,8 +252,8 @@ $(document).ready(function () {
         $('#vfta2').val(conversionFactor1 * $('#ar2').val());
         $('#cfa2').text(conversionFactor1);
         $('#vfta2').text(conversionFactor1 * $('#ar2').val());
-        $('#total-area1').text($('#cfa2').val() * $('#vfta2').val())
-            .val($('#cfa2').val() * $('#vfta2').val());
+        $('#total-area2').text($('#vfta2').val() * $("#m2").val())
+            .val($('#vfta2').val() * $("#m2").val());
     });
     $('#covl2').change(function () {
         var name = $('#covl2').find(":selected").text();
@@ -254,7 +271,8 @@ $(document).ready(function () {
         $('#cfl2').text(conversionFactor1).val(conversionFactor1);
         $('#vftl2').text(conversionFactor1 * $('#lng2').val()).val(conversionFactor1 * $('#lng2').val());
         if (($('#vftw2').val().length != 0) && ($('#vftl2').val().length != 0)) {
-            $('#total-area2').text(($('#vftl2').val() * $('#vftw2').val()) + " Sq. Ft").val($('#vftl2').val() * $('#vftw2').val());
+            $('#total-area2').text(($('#vftl2').val() * $('#vftw2').val()* $("#m2").val()) + " Sq. Ft")
+                .val($('#vftl2').val() * $('#vftw2').val() * $("#m2").val());
         }
     });
     $('#covw2').change(function () {
@@ -273,7 +291,19 @@ $(document).ready(function () {
         $('#cfw2').text(conversionFactor1).val(conversionFactor1);
         $('#vftw2').text(conversionFactor1 * $('#wi2').val()).val(conversionFactor1 * $('#wi2').val());
         if (($('#vftw2').val().length != 0) && ($('#vftl2').val().length != 0)) {
-            $('#total-area2').text(($('#vftl2').val() * $('#vftw2').val()) + " Sq. Ft").val($('#vftl2').val() * $('#vftw2').val());
+            $('#total-area2').text(($('#vftl2').val() * $('#vftw2').val() * $("#m2").val()) + " Sq. Ft")
+                .val($('#vftl2').val() * $('#vftw2').val() * $("#m2").val());
+        }
+    });
+
+    //change multiplier
+    $("#m2").on("change keyup input", function () {
+        if ($('#vfta2').val() === "") {
+            $("#total-area2").val($("#m2").val() * $("#vftl2").val() * $("#vftw2").val())
+                .text($("#m2").val() * $("#vftl2").val() * $("#vftw2").val()  + " Sq. Ft");
+        } else {
+            $("#total-area2").val($("#m2").val() * $("#vfta2").val())
+                .text($("#m2").val() * $("#vfta2").val()  + " Sq. Ft");
         }
     });
     //mow or not
@@ -336,7 +366,8 @@ $(document).ready(function () {
                 .val($('#cfl3').val() * $(this).val());
         }
         if (($('#vftw3').val().length != 0) && ($('#vftl3').val().length != 0)) {
-            $('#total-area3').text(($('#vftl3').val() * $('#vftw3').val()) + " Sq. Ft").val($('#vftl3').val() * $('#vftw3').val());
+            $('#total-area3').text(($('#m3').val() * $('#vftl3').val() * $('#vftw3').val()) + " Sq. Ft")
+                .val($('#m3').val() * $('#vftl3').val() * $('#vftw3').val());
         }
     });
     $('#wi3').on('change keyup input', function() {
@@ -349,7 +380,8 @@ $(document).ready(function () {
         }
         //change total, maybe
         if (($('#vftw3').val().length != 0) && ($('#vftl3').val().length != 0)) {
-            $('#total-area3').text(($('#vftl3').val() * $('#vftw3').val()) + " Sq. Ft").val($('#vftl3').val() * $('#vftw3').val());
+            $('#total-area3').text(($('#m3').val() * $('#vftl3').val() * $('#vftw3').val()) + " Sq. Ft")
+                .val($('#m3').val() * $('#vftl3').val() * $('#vftw3').val());
         }
     });
 //calculate for conversion factor
@@ -374,8 +406,8 @@ $(document).ready(function () {
         $('#vfta3').val(conversionFactor3 * $('#ar3').val());
         $('#cfa3').text(conversionFactor3);
         $('#vfta3').text(conversionFactor3 * $('#ar3').val());
-        $('#total-area3').text($('#cfa3').val() * $('#vfta3').val())
-            .val($('#cfa3').val() * $('#vfta3').val());
+        $('#total-area3').text($('#m3').val() * $('#vfta3').val())
+            .val($('#m3').val() * $('#vfta3').val());
     });
     $('#covl3').change(function () {
         var name = $('#covl3').find(":selected").text();
@@ -393,7 +425,8 @@ $(document).ready(function () {
         $('#cfl3').text(conversionFactor3).val(conversionFactor3);
         $('#vftl3').text(conversionFactor3 * $('#lng3').val()).val(conversionFactor3 * $('#lng3').val());
         if (($('#vftw3').val().length != 0) && ($('#vftl3').val().length != 0)) {
-            $('#total-area3').text(($('#vftl3').val() * $('#vftw3').val()) + " Sq. Ft").val($('#vftl3').val() * $('#vftw3').val());
+            $('#total-area3').text(($('#m3').val() * $('#vftl3').val() * $('#vftw3').val()) + " Sq. Ft")
+                .val($('#m3').val() * $('#vftl3').val() * $('#vftw3').val());
         }
     });
     $('#covw3').change(function () {
@@ -412,9 +445,20 @@ $(document).ready(function () {
         $('#cfw3').text(conversionFactor3).val(conversionFactor3);
         $('#vftw3').text(conversionFactor3 * $('#wi3').val()).val(conversionFactor3 * $('#wi3').val());
         if (($('#vftw3').val().length != 0) && ($('#vftl3').val().length != 0)) {
-            $('#total-area3').text(($('#vftl3').val() * $('#vftw3').val()) + " Sq. Ft").val($('#vftl3').val() * $('#vftw3').val());
+            $('#total-area3').text(($('#m3').val() * $('#vftl3').val() * $('#vftw3').val()) + " Sq. Ft")
+                .val($('#m3').val() * $('#vftl3').val() * $('#vftw3').val());
         }
     });
+    $("#m3").on("change keyup input", function () {
+        if ($('#vfta3').val() === "") {
+            $("#total-area3").val($("#m3").val() * $("#vftl3").val() * $("#vftw3").val())
+                .text($("#m3").val() * $("#vftl3").val() * $("#vftw3").val()  + " Sq. Ft");
+        } else {
+            $("#total-area3").val($("#m3").val() * $("#vfta3").val())
+                .text($("#m3").val() * $("#vfta3").val()  + " Sq. Ft");
+        }
+    });
+
 //mow or not
     $('#nymow3').on('change', function () {
         if ($('#nymow3').find(":selected").val() === "Yes") {
@@ -424,7 +468,7 @@ $(document).ready(function () {
         } else {
             $('#mow3').text("Please answer question about slopes");
         }
-    })
+    });
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //////////// *********** AREA 4 *********** ///////////////////////////////////////////////////////////////////
@@ -453,8 +497,8 @@ $(document).ready(function () {
             $('#vfta4').text($('#cfa4').val() * $(this).val())
                 .val($('#cfa4').val() * $(this).val());
         }
-        $('#total-area4').text($('#cfa4').val() * $('#vfta4').val())
-            .val($('#cfa4').val() * $('#vfta4').val());
+        $('#total-area4').text($('#m4').val() * $('#vfta4').val())
+            .val($('#m4').val() * $('#vfta4').val());
     });
 //disable area fields when w/l is used
     $('#lng4, #wi4').on('change paste keyup', function (e) {
@@ -476,7 +520,8 @@ $(document).ready(function () {
                 .val($('#cfl4').val() * $(this).val());
         }
         if (($('#vftw4').val().length != 0) && ($('#vftl4').val().length != 0)) {
-            $('#total-area4').text(($('#vftl4').val() * $('#vftw4').val()) + " Sq. Ft").val($('#vftl4').val() * $('#vftw4').val());
+            $('#total-area4').text(($('#m4').val() * $('#vftl4').val() * $('#vftw4').val()) + " Sq. Ft")
+                .val($('#m4').val() * $('#vftl4').val() * $('#vftw4').val());
         }
     });
     $('#wi4').on('change keyup input', function() {
@@ -489,7 +534,8 @@ $(document).ready(function () {
         }
         //change total, maybe
         if (($('#vftw4').val().length != 0) && ($('#vftl4').val().length != 0)) {
-            $('#total-area4').text(($('#vftl4').val() * $('#vftw4').val()) + " Sq. Ft").val($('#vftl4').val() * $('#vftw4').val());
+            $('#total-area4').text(($('#m4').val() * $('#vftl4').val() * $('#vftw4').val()) + " Sq. Ft")
+                .val($('#m4').val() * $('#vftl4').val() * $('#vftw4').val());
         }
     });
 //calculate for conversion factor
@@ -514,8 +560,8 @@ $(document).ready(function () {
         $('#vfta4').val(conversionFactor4 * $('#ar4').val());
         $('#cfa4').text(conversionFactor4);
         $('#vfta4').text(conversionFactor4 * $('#ar4').val());
-        $('#total-area4').text($('#cfa4').val() * $('#vfta4').val())
-            .val($('#cfa4').val() * $('#vfta4').val());
+        $('#total-area4').text($('#m4').val() * $('#vfta4').val())
+            .val($('#m4').val() * $('#vfta4').val());
     });
     $('#covl4').change(function () {
         var name = $('#covl4').find(":selected").text();
@@ -533,7 +579,8 @@ $(document).ready(function () {
         $('#cfl4').text(conversionFactor4).val(conversionFactor4);
         $('#vftl4').text(conversionFactor4 * $('#lng4').val()).val(conversionFactor4 * $('#lng4').val());
         if (($('#vftw4').val().length != 0) && ($('#vftl4').val().length != 0)) {
-            $('#total-area4').text(($('#vftl4').val() * $('#vftw4').val()) + " Sq. Ft").val($('#vftl4').val() * $('#vftw4').val());
+            $('#total-area4').text(($('#m4').val() * $('#vftl4').val() * $('#vftw4').val()) + " Sq. Ft")
+                .val($('#m4').val() * $('#vftl4').val() * $('#vftw4').val());
         }
     });
     $('#covw4').change(function () {
@@ -552,9 +599,20 @@ $(document).ready(function () {
         $('#cfw4').text(conversionFactor4).val(conversionFactor4);
         $('#vftw4').text(conversionFactor4 * $('#wi4').val()).val(conversionFactor4 * $('#wi4').val());
         if (($('#vftw4').val().length != 0) && ($('#vftl4').val().length != 0)) {
-            $('#total-area4').text(($('#vftl4').val() * $('#vftw4').val()) + " Sq. Ft").val($('#vftl4').val() * $('#vftw4').val());
+            $('#total-area4').text(($('#m4').val() * $('#vftl4').val() * $('#vftw4').val()) + " Sq. Ft")
+                .val($('#m4').val() * $('#vftl4').val() * $('#vftw4').val());
         }
     });
+    $("#m4").on("change keyup input", function () {
+        if ($('#vfta4').val() === "") {
+            $("#total-area4").val($("#m4").val() * $("#vftl4").val() * $("#vftw4").val())
+                .text($("#m4").val() * $("#vftl4").val() * $("#vftw4").val()  + " Sq. Ft");
+        } else {
+            $("#total-area4").val($("#m4").val() * $("#vfta4").val())
+                .text($("#m4").val() * $("#vfta4").val()  + " Sq. Ft");
+        }
+    });
+
 //mow or not
     $('#nymow4').on('change', function () {
         if ($('#nymow4').find(":selected").val() === "Yes") {
@@ -593,8 +651,8 @@ $(document).ready(function () {
             $('#vfta5').text($('#cfa5').val() * $(this).val())
                 .val($('#cfa5').val() * $(this).val());
         }
-        $('#total-area5').text($('#cfa5').val() * $('#vfta5').val())
-            .val($('#cfa5').val() * $('#vfta5').val());
+        $('#total-area5').text($('#m5').val() * $('#vfta5').val())
+            .val($('#m5').val() * $('#vfta5').val());
     });
 //disable area fields when w/l is used
     $('#lng5, #wi5').on('change paste keyup', function (e) {
@@ -616,7 +674,8 @@ $(document).ready(function () {
                 .val($('#cfl5').val() * $(this).val());
         }
         if (($('#vftw5').val().length != 0) && ($('#vftl5').val().length != 0)) {
-            $('#total-area5').text(($('#vftl5').val() * $('#vftw5').val()) + " Sq. Ft").val($('#vftl5').val() * $('#vftw5').val());
+            $('#total-area5').text(($('#m5').val() * $('#vftl5').val() * $('#vftw5').val()) + " Sq. Ft")
+                .val($('#m5').val() * $('#vftl5').val() * $('#vftw5').val());
         }
     });
     $('#wi5').on('change keyup input', function() {
@@ -629,7 +688,8 @@ $(document).ready(function () {
         }
         //change total, maybe
         if (($('#vftw5').val().length != 0) && ($('#vftl5').val().length != 0)) {
-            $('#total-area5').text(($('#vftl5').val() * $('#vftw5').val()) + " Sq. Ft").val($('#vftl5').val() * $('#vftw5').val());
+            $('#total-area5').text(($('#m5').val() * $('#vftl5').val() * $('#vftw5').val()) + " Sq. Ft")
+                .val($('#m5').val() * $('#vftl5').val() * $('#vftw5').val());
         }
     });
 //calculate for conversion factor
@@ -654,8 +714,8 @@ $(document).ready(function () {
         $('#vfta5').val(conversionFactor5 * $('#ar5').val());
         $('#cfa5').text(conversionFactor5);
         $('#vfta5').text(conversionFactor5 * $('#ar5').val());
-        $('#total-area5').text($('#cfa5').val() * $('#vfta5').val())
-            .val($('#cfa5').val() * $('#vfta5').val());
+        $('#total-area5').text($('#m5').val() * $('#vfta5').val())
+            .val($('#m5').val() * $('#vfta5').val());
     });
     $('#covl5').change(function () {
         var name = $('#covl5').find(":selected").text();
@@ -673,7 +733,8 @@ $(document).ready(function () {
         $('#cfl5').text(conversionFactor5).val(conversionFactor5);
         $('#vftl5').text(conversionFactor5 * $('#lng5').val()).val(conversionFactor5 * $('#lng5').val());
         if (($('#vftw5').val().length != 0) && ($('#vftl5').val().length != 0)) {
-            $('#total-area5').text(($('#vftl5').val() * $('#vftw5').val()) + " Sq. Ft").val($('#vftl5').val() * $('#vftw5').val());
+            $('#total-area5').text(($('#m5').val() * $('#vftl5').val() * $('#vftw5').val()) + " Sq. Ft")
+                .val($('#m5').val() * $('#vftl5').val() * $('#vftw5').val());
         }
     });
     $('#covw5').change(function () {
@@ -692,9 +753,20 @@ $(document).ready(function () {
         $('#cfw5').text(conversionFactor5).val(conversionFactor5);
         $('#vftw5').text(conversionFactor5 * $('#wi5').val()).val(conversionFactor5 * $('#wi5').val());
         if (($('#vftw5').val().length != 0) && ($('#vftl5').val().length != 0)) {
-            $('#total-area5').text(($('#vftl5').val() * $('#vftw5').val()) + " Sq. Ft").val($('#vftl5').val() * $('#vftw5').val());
+            $('#total-area5').text(($('#m5').val() * $('#vftl5').val() * $('#vftw5').val()) + " Sq. Ft")
+                .val($('#m5').val() * $('#vftl5').val() * $('#vftw5').val());
         }
     });
+    $("#m5").on("change keyup input", function () {
+        if ($('#vfta5').val() === "") {
+            $("#total-area5").val($("#m5").val() * $("#vftl5").val() * $("#vftw5").val())
+                .text($("#m5").val() * $("#vftl5").val() * $("#vftw5").val()  + " Sq. Ft");
+        } else {
+            $("#total-area5").val($("#m5").val() * $("#vfta5").val())
+                .text($("#m5").val() * $("#vfta5").val()  + " Sq. Ft");
+        }
+    });
+
 //mow or not
     $('#nymow5').on('change', function () {
         if ($('#nymow5').find(":selected").val() === "Yes") {
@@ -718,6 +790,64 @@ $(document).ready(function () {
         console.log(parseInt($('#total-area1').val()) + parseFloat($('#total-area2').val()))
     })
 
+    setInterval(function () {
+        //sq ft totals
+        $("#area1total1").text($("#total-area1").val());
+        $("#area2total1").text($("#total-area2").val());
+        $("#area3total1").text($("#total-area3").val());
+        $("#area4total1").text($("#total-area4").val());
+        $("#area5total1").text($("#total-area5").val());
+
+        //mow y/n
+        $("#area1total2").text($("#mow1").text());
+        $("#area2total2").text($("#mow2").text());
+        $("#area3total2").text($("#mow3").text());
+        $("#area4total2").text($("#mow4").text());
+        $("#area5total2").text($("#mow5").text());
+
+        //total
+        totalAreaCalc = parseFloat($('#total-area1').val()) + parseFloat($('#total-area2').val())
+            + parseFloat($('#total-area3').val()) + parseFloat($('#total-area4').val())
+            + parseFloat($('#total-area5').val());
+        $('#totalcal1').text(totalAreaCalc + " SF").val(totalAreaCalc);
+        $('#totalcal2').text((totalAreaCalc/43560).toFixed(2) + " AC").val(totalAreaCalc/43560);
+
+        var totalMowArea = mowArea();
+        $('#totalmowarea1').text(totalMowArea[0] + " SF").val(totalMowArea[0]);
+        $('#totalnonmowarea1').text(totalMowArea[1] + " SF").val(totalMowArea[1]);
+        $('#totalmowarea2').text((totalMowArea[0]/43560).toFixed(2) + " AC").val(totalMowArea[0]/43560);
+        $('#totalnonmowarea2').text((totalMowArea[1]/43560).toFixed(2) + " AC").val(totalMowArea[1]/43560);
+    }, 100);
 
 
+
+    function mowArea() {
+        var total = [0, 0];
+        if ($('#mow1').text() === "Mow Area") {
+            total[0]+= parseFloat($('#total-area1').val());
+        } else {
+            total[1]+= parseFloat($('#total-area1').val());
+        }
+        if ($('#mow2').text() === "Mow Area") {
+            total[0]+= parseFloat($('#total-area2').val());
+        } else {
+            total[1]+= parseFloat($('#total-area2').val());
+        }
+        if ($('#mow3').text() === "Mow Area") {
+            total[0]+= parseFloat($('#total-area3').val());
+        } else {
+            total[1]+= parseFloat($('#total-area3').val());
+        }
+        if ($('#mow4').text() === "Mow Area") {
+            total[0]+= parseFloat($('#total-area4').val());
+        } else {
+            total[1]+= parseFloat($('#total-area4').val());
+        }
+        if ($('#mow5').text() === "Mow Area") {
+            total[0]+= parseFloat($('#total-area5').val());
+        } else {
+            total[1]+= parseFloat($('#total-area5').val());
+        }
+        return total;
+    }
 });
