@@ -865,6 +865,8 @@ function backWithNoResults () {
 }
 
 function backWithResults () {
+    console.log("here?3");
+
     var obj = '{ "coreMixTotals" : [' +
         parseFloat($('#total-area1').val()) + ',' + parseFloat($('#total-area2').val()) + ',' +
         parseFloat($('#total-area3').val()) + ',' + parseFloat($('#total-area4').val()) + ',' +
@@ -874,6 +876,10 @@ function backWithResults () {
         '"totalMowArea" : {"SF" : ' + $('#totalmowarea1').val() + ', "AC" :' + $('#totalmowarea2').val() + '},' +
         '"totalNonMowArea" : {"SF" : ' + $('#totalnonmowarea1').val() + ', "AC" :' + $('#totalnonmowarea2').val() + '}}}';
     var json = JSON.parse(obj);
+    console.log("here?1");
+    sessionStorage.setItem("calculator_user", obj);
+    console.log("here?");
+    window.location.href = "vdot.html#calc";
     //send json to server
 }
 
