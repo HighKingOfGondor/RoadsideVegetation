@@ -851,40 +851,44 @@ $(document).ready(function () {
         return total;
     }
 
+
+
+
+    //********************************************************************************************//
+//**************************   BUTTON FUNCTIONS   ********************************************//
+//********************************************************************************************//
+
+    $('#back-with-no-results').click(function () {
+        window.location.href = "vdot.html#calc";
+    });
+
+    $('#back-with-results').click(function () {
+        console.log("here?3");
+
+        var obj = '{ "coreMixTotals" : [' +
+            parseFloat($('#total-area1').val()) + ',' + parseFloat($('#total-area2').val()) + ',' +
+            parseFloat($('#total-area3').val()) + ',' + parseFloat($('#total-area4').val()) + ',' +
+            parseFloat($('#total-area5').val()) + '],' +
+            '"areaTotals" : {' +
+            '"totalArea" : {"SF" : ' + $('#totalcal1').val() + ', "AC" :' + $('#totalcal2').val() + '},' +
+            '"totalMowArea" : {"SF" : ' + $('#totalmowarea1').val() + ', "AC" :' + $('#totalmowarea2').val() + '},' +
+            '"totalNonMowArea" : {"SF" : ' + $('#totalnonmowarea1').val() + ', "AC" :' + $('#totalnonmowarea2').val() + '}}}';
+        var json = JSON.parse(obj);
+        console.log("here?1");
+        sessionStorage.setItem("calculator_user", obj);
+        console.log("here?");
+        window.location.href = "vdot.html#calc";
+        //send json to server
+    });
+
+    $('#clear-entries').click(function () {
+        $('table.core-mix td input').each(function () {
+            $(this).val('');
+        })
+    });
+
 });
 
 
 
 
-//********************************************************************************************//
-//**************************   BUTTON FUNCTIONS   ********************************************//
-//********************************************************************************************//
-
-function backWithNoResults () {
-    window.location.href = "vdot.html#calc";
-}
-
-function backWithResults () {
-    console.log("here?3");
-
-    var obj = '{ "coreMixTotals" : [' +
-        parseFloat($('#total-area1').val()) + ',' + parseFloat($('#total-area2').val()) + ',' +
-        parseFloat($('#total-area3').val()) + ',' + parseFloat($('#total-area4').val()) + ',' +
-        parseFloat($('#total-area5').val()) + '],' +
-        '"areaTotals" : {' +
-        '"totalArea" : {"SF" : ' + $('#totalcal1').val() + ', "AC" :' + $('#totalcal2').val() + '},' +
-        '"totalMowArea" : {"SF" : ' + $('#totalmowarea1').val() + ', "AC" :' + $('#totalmowarea2').val() + '},' +
-        '"totalNonMowArea" : {"SF" : ' + $('#totalnonmowarea1').val() + ', "AC" :' + $('#totalnonmowarea2').val() + '}}}';
-    var json = JSON.parse(obj);
-    console.log("here?1");
-    sessionStorage.setItem("calculator_user", obj);
-    console.log("here?");
-    window.location.href = "vdot.html#calc";
-    //send json to server
-}
-
-function clearEntries () {
-    $('table.core-mix td input').each(function () {
-        $(this).val('');
-    })
-}

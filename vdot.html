@@ -36,6 +36,8 @@
     </style>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js" integrity="sha384-THVO/sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb/PTA7LdUHs" crossorigin="anonymous"></script>
     <script src="js/calc.js"></script>
     <script src="js/vdot.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -85,7 +87,7 @@
             <div class="btn-group btn-sizing" role="group" aria-label="options">
                 <span>Page Options:</span>
                 <button type="button" class="btn btn-primary" onclick="window.location.href='instructions.html';">Instructions</button>
-                <button type="button" class="btn btn-primary">Save File As...</button>
+                <button type="button" class="btn btn-primary" id="save-as-pdf">Save File As...</button>
                 <button type="button" class="btn btn-success">Show Results</button>
                 <button type="button" class="btn btn-danger">Clear Page</button>
             </div>
@@ -308,7 +310,7 @@
             <tr>
                 <td>2a. How large is the area that will receive regular seed?</td>
                 <td><button class="btn btn-primary"><a href="calc.html">Area Calculator</a></button></td><a name="calc"></a>
-                <td><input type="number" name="pro-name" size="25" min="0" style="background: yellow"></td>
+                <td><input type="number" name="pro-name" size="25" min="0" style="background: yellow" id="total-area"></td>
                 <td>
                     <select style="background: lightgray;">
                         <option value="ac">Acre(s)</option>
@@ -323,7 +325,7 @@
             </tr>
             <tr>
                 <td>2b. How much of the area receiving Regular Seed has slopes equal to or flatter than 3:1? (This area is the "Mowed Area")</td>
-                <td><input type="number" name="pro-name" size="25" min="0" style="background: yellow"></td>
+                <td><input type="number" name="pro-name" size="25" min="0" style="background: yellow" id="mowed-area"></td>
                 <td>
                     <select style="background: lightgray;">
                         <option value="ac">Acre(s)</option>
@@ -348,7 +350,7 @@
             </tr>
             <tr>
                 <td>2d. How much of the area receiving Regular Seed has slopes that steeper than 3:1? (This area is the "Non-Mowed Area", aka "Slopes")</td>
-                <td><input type="number" name="pro-name" size="25" min="0" style="background: yellow"></td>
+                <td><input type="number" name="pro-name" size="25" min="0" style="background: yellow" id="non-mowed-area"></td>
                 <td>
                     <select style="background: lightgray;">
                         <option value="ac">Acre(s)</option>
