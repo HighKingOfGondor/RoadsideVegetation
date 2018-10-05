@@ -1,5 +1,18 @@
 var inc = 2;
 
+$(document).ready(function () {
+    $(function() {
+        $('#info-popover').popover({html:true})
+            .on('shown.bs.popover', function () {
+                $('#information-popovercontent').bootstrapTable();
+            });
+    });
+
+
+
+});
+
+
 function cloneTable () {
     if (inc <= 5) {
         var div = document.getElementById("chart");

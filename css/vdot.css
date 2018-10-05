@@ -149,3 +149,108 @@ button.add {
     margin-top: 20px;
     margin-bottom: 50px;
 }
+
+/* ************************************************************************** */
+/* ******************* vdot.html ******************************************** */
+/* ************************************************************************** */
+
+p,
+th,
+td,
+li,
+ul,
+ol {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+li {
+    margin-bottom: 5px;
+}
+h3 {
+    font-size: 28px;
+}
+h4 {
+    font-size: 24px;
+}
+h5 {
+    font-size: 20px;
+    color: white;
+}
+h6 {
+    font-size: 18px;
+}
+
+header#top {
+    margin-bottom: 0;
+}
+
+.menu-text {
+    color: white;
+}
+
+/* ***************** header content ******************************* */
+
+.navbar-inverse {
+    background-image: -webkit-linear-gradient(top, #81b74d 0, #4f881a 100%);
+    background-image: -o-linear-gradient(top,#81b74d 0,#4f881a 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#81b74d),to(#4f881a));
+    background-image: linear-gradient(to bottom,#81b74d 0,#4f881a 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff265a88', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    background-repeat: repeat-x;
+    border-color: #4a8029;
+}
+.navbar-inverse .navbar-nav>li>a,
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav>li>a {
+    color: #efefef;
+}
+.nav.navbar-nav li {
+    margin-bottom: 0;
+}
+.nav.navbar-nav li button {
+    margin-top: 7px;
+    margin-left: 30px;
+}
+.navbar-collapse .nav.navbar-nav li button {
+    margin-left: 15px;
+}
+
+/* **************** pop-over content **************************************** */
+/* ************************************************************************** */
+
+
+#info-table tr td {
+    padding-right: 7px;
+}
+
+.popover {
+    max-width: 100%;
+}
+
+/* **************** body **************************************** */
+/* ************************************************************** */
+
+#toolbar {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+#toolbar .wrapper {
+    width: 350px;
+    margin: 0 auto;
+}
+
+h4.slide-header {
+    color: black;
+    font-family: "Verdana", Geneva, sans-serif;
+    text-align: center;
+}
+
+button.dot {
+    height: 65px;
+    background-color: #bbb;
+    border-radius: 40%;
+}

@@ -5,39 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NCHRP 14-40</title>
-    <!-- Bootstrap -->
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="css/acrp0911.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
+
     <link href="css/vdot.css" rel="stylesheet">
 
-    <style>
-        .jumbotron {
-            background: transparent url(images/design/curve-road.jpg) 0 0 no-repeat;
-            background-size: 100% 100%;
 
-            padding-bottom: 35%;
-        }
-
-        .credits {
-            color: #eee;
-            display: inline-block;
-            font-size: 14px !important;
-            margin: 40px auto;
-            padding: 15px;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-
-        p {
-            font-family: Arial, sans-serif;
-        }
-    </style>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js" integrity="sha384-THVO/sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb/PTA7LdUHs" crossorigin="anonymous"></script>
     <script src="js/calc.js"></script>
     <script src="js/vdot.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -50,376 +31,209 @@
     <![endif]-->
 </head>
 
-<body class="home">
-<header class="navbar navbar-static-top navbar-inverse" id="top" role="banner">
-    <div class="container">
-        <div class="navbar-header">
-            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="index.htm" class="navbar-brand">NCHRP 14-40</a>
-        </div>
-        <nav class="collapse navbar-collapse bs-navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="index.htm">Home</a>
-                </li>
+<body>
 
-                <li>
-                    <a href="facility.htm">Your Facility</a>
-                </li>
-                <li class="active"><a href="vdot.html">VDOT Roadside</a></li>
-                <li>
-                    <a href="appendix.htm">
-                        Appendix
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div><!-- end .container -->
-</header>
+    <!-- ------------------ HEADER ----------------------------------------------------------------------- -->
+    <!-- ************************************************************************************************* -->
+
+    <header class="navbar navbar-static-top navbar-inverse" id="top" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="index.htm" class="navbar-brand">NCHRP 14-40</a>
+            </div>
+            <nav class="collapse navbar-collapse bs-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.htm">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="facility.htm">Your Facility</a>
+                    </li>
+                    <li class="active"><a href="vdot.html">VDOT Roadside</a></li>
+                    <li>
+                        <a href="appendix.htm">
+                            Appendix
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+        </div><!-- end .container -->
+    </header>
+
+    <!-- ------------------ BODY ------------------------------------------------------------------------- -->
+    <!-- ************************************************************************************************* -->
+
+    <div class="container-fluid">
+        <div class="page-header" style="text-align: center;">
+            <h2>VDOT Roadside Worksheet</h2>
+        </div>
+    </div>
+    <div class="container" id="toolbar">
+        <div class="wrapper text-center">
+            <div class="btn-group" style="width: 870px;" id="btn-options-group">
+                <button class="btn btn-default">Instructions</button>
+                <button class="btn btn-default">Restart</button>
+                <button type="button" id='info-popover' class="btn btn-default" data-toggle="popover" data-placement="bottom" data-content="<div class='table-responsive' style='width: 860px;'><table id='info-table' class='sastable table' data-classes='table table-bordered table-condensed table-striped' data-toggle='table' data-height='150'><thead>
+                    <tr>
+                        <th scope='col'>Routine Fertilization of Ex Vegetation</th>
+                        <th scope='col'>Frequency of Soil Sampling</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Linear, non-interstate</td>
+                        <td>One soil test per 5-mile section</td>
+                    </tr>
+                    <tr>
+                        <td>Linear, interstate</td>
+                        <td>One soil test per 5 mile section <b>OR</b> one soil sample in each direction between exits, whichever distance is greater</td>
+                    </tr>
+                    <tr>
+                        <td>Non-linear, including interchanges</td>
+                        <td>One soil test per 20 acres</td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr><th scope='col'>Repair or Establish Vegetation</th><th></th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Linear</td><td>One soil test per linear mile</td></tr>
+                    <tr><td>Non-linear, including interchanges</td><td>One soil test per 2 acres</td></tr>
+                </tbody>
+                <thead>
+                    <tr><th scope='col'>Problem Sites (Failing Vegetation)</th><th></th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Linear & Non-linear</td><td>New soil test & site assessment by a qualified person</td></tr>
+                </tbody>
+                </table></div>">Information on Soil Tests &#8964;</button>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+
     <div class="container">
-        <div class="page-header">
-            <h2>Start Page</h2><br>
-            <div class="btn-group btn-sizing" role="group" aria-label="options">
-                <span>Page Options:</span>
-                <button type="button" class="btn btn-primary" onclick="window.location.href='instructions.html';">Instructions</button>
-                <button type="button" class="btn btn-primary" id="save-as-pdf">Save File As...</button>
-                <button type="button" class="btn btn-success">Show Results</button>
-                <button type="button" class="btn btn-danger">Clear Page</button>
+        <div class="well" id="project-information">
+
+            <!-- ********** SLIDE ONE ********** -->
+            <!-- ******************************* -->
+            <div id="slide-one-content">
+                <h4 class="slide-header" style="text-align: center;">Project Information</h4>
+                <div class="row">
+                    <br>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="project-name">Project Name</label>
+                            <input type="text" class="form-control" id="project-name" placeholder="Project Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="project-ppms">PPMS (UPC) Number</label>
+                            <input type="text" class="form-control" id="project-ppms" placeholder="PPMS (UPC)">
+                        </div>
+                        <div class="form-group">
+                            <label for="project-planting-date">Project Planting Date</label>
+                            <input type="text" class="form-control" id="project-planting-date" placeholder="Planting Date">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="roadside-data">Roadside Data From</label>
+                            <input type="text" class="form-control" id="roadside-data" placeholder="Roadside Data">
+                        </div>
+                        <div class="form-group">
+                            <label for="ld-data">L&D Data From</label>
+                            <input type="text" class="form-control" id="ld-data" placeholder="L&D Data">
+                        </div>
+                        <div class="form-group">
+                            <label for="date-data">Date Entered</label>
+                            <div class='input-group date' id='datetimepicker'>
+                                <input type='text' class="form-control" id="date-data"/>
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                            <script>
+                                $(function () {
+                                    $('#datetimepicker').datetimepicker({format: 'YYYY-MM-DD'});
+                                })
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="form-group text-center">
+                            <label for="project-desc">Project Description</label>
+                            <textarea class="form-control center-block" id="project-desc" rows="4"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-1 pull-left">
+                        <button class="btn btn-primary" style="background-color: #D5732F; border-color: #B24C05;">&#8678;</button>
+                    </div>
+                    <div class="col-sm-1 pull-right">
+                        <button class="btn btn-primary" style="background-color: #D5732F; border-color: #B24C05;">&#8680;</button>
+                    </div>
+                </div>
+                <div class="row" style="display: flex; justify-content: center;">
+                    <div class="col-sm-3">
+                        <div class="btn-toolbar" role="toolbar">
+                            <div class="btn-group mr-2">
+                                <button type="button" class="btn btn-secondary" style="border-radius: 50%; height: 25px; width: 25px; margin-right: 25px; margin-left: 30px;"></button>
+                                <button type="button" class="btn btn-secondary" style="border-radius: 50%; height: 25px; width: 25px; margin-right: 25px;"></button>
+                                <button type="button" class="btn btn-secondary" style="border-radius: 50%; height: 25px; width: 25px;"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ********** SLIDE TWO ********** -->
+            <!-- ******************************* -->
+
+            <div id="slide-two-content">
+                <h4 class="slide-header" style="text-align: center;">Project Questionaire</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="which-project-region">Which region is this project located in?</label>
+                            <select class="custom-select mr-sm-2" id="which-project-region">
+                                <option selected>--</option>
+                                <option value="mountian">Mountian</option>
+                                <option value="coastal">Coastal</option>
+                                <option value="piedmont">Piedmont</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="how-many-core-seed-mixes">How many core seed mixes will be used on this project?</label>
+                            <input type="number" class="form-control" id="how-many-core-seed-mixes" placeholder="1" min="1" max="5">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="existing-topsoil-layers">Have the existing </label>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
     </div>
-<div class="sidebar col-xs-3" style="float: right; width: 31%;">
-    <div class="well">
-        <div class="warnings">
-            <span style="font-size: medium;">Fill in ALL fields with highlighting<br></span>
-            <span>Yellow is L&D; Blue is Roadside; Green is Both.<br>Gray is a default value that can be changed.</span><br>
-            <span style="font-size: medium;">Warning!</span><span> Pressing the Clear Page/All button can NOT be undone! Press it only if you intend to delete ALL input on this page or in this file.</span>
-        </div>
-        <div class="info-left">
-            <h6>Routine Fertilization of Ex. Veg.</h6>
-            <span>Linear, non-interstate</span><br>
-            <span>Linear, interstate</span><br><br><br>
-            <span>Non-Linear, including interchanges</span><br>
-            <h6>Repair or Establish Vegetation</h6>
-            <span>Linear</span><br>
-            <span>Non-Linear including interchanges</span><br>
-            <h6>Problem Sites (failing vegetation)</h6>
-            <span>Linear & Non-Linear</span>
-        </div>
-        <div class="info-right">
-            <h6>Frequency of Soil Sampling</h6>
-            <span>One soil test per 5 mile section</span><br>
-            <span>One soil test per 5 mile section OR<br>one soil sample in each direction between exits,<br>whichever distance is greater</span><br>
-            <span>One soil test per 20 acres</span><br><br><h6></h6>
-            <span>One soil test per linear mile</span><br>
-            <span>One soil test per 20 acres</span><br><h6></h6><br>
-            <span>New soil test & site assessment by a qualified</span>
-
-        </div>
-    </div>
-</div>
-<div id="chart">
-    <table class="table-body">
-        <caption>Project Information</caption>
-        <tbody>
-            <tr>
-                <td>
-                    Project Name/No.:
-                </td>
-                <td>
-                    <input type="text" name="pro-name" size="25" style="background: yellow">
-                </td>
-                <td>
-                    Roadside Data Form:
-                </td>
-                <td>
-                    <input type="text" name="pro-name" size="25" style="background: cornflowerblue">
-                </td>
-            </tr>
-        <tr>
-            <td>
-                PPMS (UPC) #:
-            </td>
-            <td>
-                <input type="text" name="pro-name" size="25" style="background: yellow">
-            </td>
-            <td>
-                L&D Data Form:
-            </td>
-            <td >
-                <input type="text" name="pro-name" size="25" style="background: yellow">
-            </td>
-        </tr>
-        <tr>
-            <td>Planting Date:</td>
-            <td><input type="text" name="pro-name" size="25" style="background: yellow"></td>
-        </tr>
-        </tbody>
-    </table>
-    <table class="table-body">
-        <tr>
-            <td style="width: 10%;">Project Description: </td>
-            <td><input type="text" name="pro-name" size="50" style="background: yellow"></td>
-        </tr>
-        <tr>
-            <td style="width: 10%;">File Location: </td>
-            <td></td>
-        </tr>
-    </table><br>
-    <table class="table-body">
-        <caption>Project Questionnaire</caption>
-        <tbody>
-            <tr>
-                <td>1. Which region is this project located in?</td>
-                <td>
-                    <select style="background: #2e6da4; color: white;">
-                        <option value="mountain">Mountain</option>
-                        <option value="coastal">Coastal</option>
-                        <option value="piedmont">Piedmont</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>2. For the area to be fertilized, have the existing vegetation and topsoil layers been disturbed by grading or other earth moving activity?</td>
-                <td>
-                    <select style="background: lightgray; color: black;">
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>2a. └» Is the subsoil exposed?</td>
-                <td>
-                    <select style="background: lightgray; color: black;">
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>3. Is the fertilized being applied to repair or re-vegetate an area that failed to achieve stabilization after both regular and overseeding?</td>
-                <td>
-                    <select style="background: lightgray; color: black;">
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>4a. If soil samples were analyzed, which laboratory (lab) was used?</td>
-                <td>
-                    <select>
-                        <option value="virginia">Virginia Tech Soil Testing Lab</option>
-                        <option value="waters-ga">Waters Agricultural Lab, Inc (GA)</option>
-                        <option value="waypoint">Waypoint Analytical</option>
-                        <option value="agri-analysis">Agri-Analysis Testing Laboratory</option>
-                        <option value="agrolab">AgroLab, Inc</option>
-                        <option value="brookside">Brookside Laboratories, Inc</option>
-                        <option value="logan">Logan Labs, LLC</option>
-                        <option value="midwest">Midwest Laboratories, Inc*</option>
-                        <option value="spectrum">Spectrum Analytic, Inc</option>
-                        <option value="waters-nc">Waters Agricultural Lab, Inc (NC)</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>4b. If soil samples were analyzed, how many will be entered here?</td>
-                <td><input type="number" name="pro-name" size="25" min="0" style="background: cornflowerblue"></td>
-            </tr>
-            <tr>
-                <td>5. How many core seed mixes will be used on this project?</td>
-                <td><input type="number" name="pro-name" size="25" min="0" style="background: cornflowerblue"></td>
-            </tr>
-            <tr>
-                <td>6. How large is the area that will receive temporary seed?</td>
-                <td><input type="number" name="pro-name" size="25" min="0" style="background: yellow"></td>
-                <td>
-                    <select style="background: lightgray;">
-                        <option value="ac">Acre(s)</option>
-                        <option value="hacre">Hectare(s)</option>
-                        <option value="ft">Square Feet</option>
-                        <option value="sk">Square Kilometer(s)</option>
-                        <option value="met">Square Meter(s)</option>
-                        <option value="mi">Square Mile(s)</option>
-                        <option value="yard">Square Yard(s)</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>7. Will topsoil be used on this project?</td>
-                <td>
-                    <select>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>7a. Which class of Topsoil should be used (A or B)?</td>
-                <td>
-                    <select>
-                        <option value="a">A</option>
-                        <option value="b">B</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>7b. How deep should the layer of topsoil be (in inches)?</td>
-                <td>
-                    <input type="number" name="pro-name" size="25" min="0" style="background: cornflowerblue" min="0" max="36">
-                </td>
-                <td>inches</td>
-            </tr>
-            <tr>
-                <td>7c. How large is the area that will receive Topsoil?</td>
-                <td><input type="number" name="pro-name" size="25" min="0" style="background: lightgreen"></td>
-                <td><input type="number" name="pro-name" size="25" min="0" style="background: lightgreen"></td>
-            </tr>
-            <tr>
-                <td>8. Total area of regular seed (based on entries below):</td>
-                <td><input type="number" name="pro-name" min="0" size="25"></td>
-                <td>
-                    <select style="background: lightgray;">
-                        <option value="ac">Acre(s)</option>
-                        <option value="hacre">Hectare(s)</option>
-                        <option value="ft">Square Feet</option>
-                        <option value="sk">Square Kilometer(s)</option>
-                        <option value="met">Square Meter(s)</option>
-                        <option value="mi">Square Mile(s)</option>
-                        <option value="yard">Square Yard(s)</option>
-                    </select>
-                </td>
-            </tr>
-        </tbody>
-    </table><br>
-    <table class="table-body" id="core-mix-clone">
-        <caption>Core Mix #1</caption>
-        <tbody>
-            <tr>
-                <td>1. Please enter a description of the area receiving Core Mix #1
-                    (e.g. Urban, Rural, Project 1, Smith Parcel, National Park Land, etc.)</td>
-                <td><input type="text" name="pro-name" size="25" style="background: cornflowerblue"></td>
-            </tr>
-            <tr>
-                <td>2a. How large is the area that will receive regular seed?</td>
-                <td><button class="btn btn-primary"><a href="calc.html">Area Calculator</a></button></td><a name="calc"></a>
-                <td><input type="number" name="pro-name" size="25" min="0" style="background: yellow" id="total-area"></td>
-                <td>
-                    <select style="background: lightgray;">
-                        <option value="ac">Acre(s)</option>
-                        <option value="hacre">Hectare(s)</option>
-                        <option value="ft">Square Feet</option>
-                        <option value="sk">Square Kilometer(s)</option>
-                        <option value="met">Square Meter(s)</option>
-                        <option value="mi">Square Mile(s)</option>
-                        <option value="yard">Square Yard(s)</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>2b. How much of the area receiving Regular Seed has slopes equal to or flatter than 3:1? (This area is the "Mowed Area")</td>
-                <td><input type="number" name="pro-name" size="25" min="0" style="background: yellow" id="mowed-area"></td>
-                <td>
-                    <select style="background: lightgray;">
-                        <option value="ac">Acre(s)</option>
-                        <option value="hacre">Hectare(s)</option>
-                        <option value="ft">Square Feet</option>
-                        <option value="sk">Square Kilometer(s)</option>
-                        <option value="met">Square Meter(s)</option>
-                        <option value="mi">Square Mile(s)</option>
-                        <option value="yard">Square Yard(s)</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>2c. What is the steepest gradient of the area with slopes equal to or flatter than 3:1? ("Mowed Area")</td>
-                <td><td><input type="number" name="pro-name" size="25" style="background: yellow"></td></td>
-                <td>
-                    <select style="background: lightgray">
-                        <option value="slope">Slope (Ratio: 3:1)</option>
-                        <option value="grade">Grade (Percent 33%)</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>2d. How much of the area receiving Regular Seed has slopes that steeper than 3:1? (This area is the "Non-Mowed Area", aka "Slopes")</td>
-                <td><input type="number" name="pro-name" size="25" min="0" style="background: yellow" id="non-mowed-area"></td>
-                <td>
-                    <select style="background: lightgray;">
-                        <option value="ac">Acre(s)</option>
-                        <option value="hacre">Hectare(s)</option>
-                        <option value="ft">Square Feet</option>
-                        <option value="sk">Square Kilometer(s)</option>
-                        <option value="met">Square Meter(s)</option>
-                        <option value="mi">Square Mile(s)</option>
-                        <option value="yard">Square Yard(s)</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>2e. What is the steepest gradient of the area with slopes steeper than 3:1? ("Non-Mowed Area" aka "Slopes")</td>
-                <td><td><input type="number" name="pro-name" size="25" min="0" style="background: yellow"></td></td>
-                <td>
-                    <select style="background: lightgray">
-                        <option value="slope">Slope (Ratio: 3:1)</option>
-                        <option value="grade">Grade (Percent 33%)</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>3. Does this area include both Urban and Rural sections?  <OR> Does this area contain sections with an adjusted seed application rate?</td>
-                <td><input type="number" name="pro-name" size="25" min="0" style="background: cornflowerblue"></td>
-            </tr>
-            <tr>
-                <td>3a. How much of the area with adjusted rates (urban) is mowed? (≤ 3:1)</td>
-                <td><input type="number" name="pro-name" size="25" min="0" style="background: lightgreen"></td>
-                <td>
-                    <select style="background: lightgray;">
-                        <option value="ac">Acre(s)</option>
-                        <option value="hacre">Hectare(s)</option>
-                        <option value="ft">Square Feet</option>
-                        <option value="sk">Square Kilometer(s)</option>
-                        <option value="met">Square Meter(s)</option>
-                        <option value="mi">Square Mile(s)</option>
-                        <option value="yard">Square Yard(s)</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>3b. How much of the area with adjusted rates is NOT mowed? (> 3:1)</td>
-                <td><input type="number" name="pro-name" size="25" min="0" style="background: lightgreen"></td>
-                <td>
-                    <select style="background: lightgray;">
-                        <option value="ac">Acre(s)</option>
-                        <option value="hacre">Hectare(s)</option>
-                        <option value="ft">Square Feet</option>
-                        <option value="sk">Square Kilometer(s)</option>
-                        <option value="met">Square Meter(s)</option>
-                        <option value="mi">Square Mile(s)</option>
-                        <option value="yard">Square Yard(s)</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>3c. What adjustment factor should be applied? (Typ. 2x for Urban Areas)</td>
-                <td><input type="number" name="pro-name" size="25" min="0" max="10" style="background: cornflowerblue"></td>
-                <td>x Normal Rate</td>
-            </tr>
-        </tbody>
-    </table><br>
-</div>
-
-<div>
-    <button class="btn btn-success add" style="color: white; font-size: 30px;" onclick="cloneTable();">+</button>
-    <button class="btn btn-danger" onclick="fillForm();">test</button>
-</div>
-
+    <br>
+    <br>
 </body>
 </html>
