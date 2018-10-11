@@ -355,7 +355,7 @@
                             <span class="input-group-addon">Acres</span>
                         </div>
 
-                        <label for="non-mowed-area-gradient">What is the steepest gradient of the area with slopes flatter than 3:1?</label>
+                        <label for="non-mowed-area-gradient">What is the steepest gradient of the area with slopes steeper than 3:1?</label>
                         <div class="input-group" style="padding-bottom: 20px;">
                             <div class="input-group">
                                 <input type="number" class="form-control" id="non-mowed-area-gradient" placeholder="1">
@@ -380,8 +380,57 @@
                         </script>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 text-center">
+                        <div class="form-group">
+                            <h6 style="font-weight: bold; font-size: 14px;">Does this area include both Urban and Rural sections? OR Does this area contain sections with an adjusted seed application rate?			</h6>
+                            <div class="checkbox-inline">
+                                <input class="form-check-input" type="radio" name="disturbed" id="yes-urban-vs-rural" value="yes" checked>
+                                <label class="form-check-label" for="yes-disturbed">
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="checkbox-inline">
+                                <input class="form-check-input" type="radio" name="disturbed" id="no-urban-vs-rural" value="no">
+                                <label class="form-check-label" for="no-disturbed">
+                                    No
+                                </label>
+                            </div>
+                        </div>
 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="urban-mowed">How much of the area with adjusted rates (urban) is mowed? (≤ 3:1)</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" id="urban-mowed" placeholder="1">
+                            <span class="input-group-addon">Acres</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="urban-not-mowed">How much of the area with adjusted rates (urban) is NOT mowed? (≤ 3:1)</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" id="urban-not-mowed" placeholder="1">
+                            <span class="input-group-addon">Acres</span>
+                        </div>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 text-center">
+                        <label for="times-normal-rate">What adjustment factor should be applied? (2x for Urban Areas)</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" id="times-normal-rate" placeholder="1">
+                            <span class="input-group-addon">x Normal Rate</span>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <!-- ********** Final Slide ***************** -->
+            <!-- **************************************** -->
+            
+
             <br>
 
             <div class="row">
