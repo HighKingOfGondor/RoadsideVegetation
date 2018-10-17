@@ -39,18 +39,20 @@ function fillForm () {
     }
 }
 
-function saveAsPDF () {
-    let doc = new jsPDF();
-    doc.addHTML(document.body, function () {
-        doc.save('test.pdf');
-    });
-}
 
 $(document).ready(function () {
     $('#save-as-pdf').click(function () {
         console.log("here");
-        let doc = new jsPDF('p','pt','a4');
+        let doc = new jsPDF('p','pt','letter');
         doc.addHTML($('#chart').css('background', 'white'), function () {
+            doc.save('test.pdf');
+        });
+    });
+
+
+    $('#download-pdf').click(function () {
+        let doc = new jsPDF('l', 'pt', 'a4');
+        doc.addHTML($('#project-information').show()[0], 15, 15, function () {
             doc.save('test.pdf');
         });
     });

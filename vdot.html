@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
@@ -58,7 +59,7 @@
                     <li>
                         <a href="facility.htm">Your Facility</a>
                     </li>
-                    <li class="active"><a href="vdot.html">VDOT Roadside</a></li>
+                    <li class="active"><a href="vdot.html">Roadside Worksheet</a></li>
                     <li>
                         <a href="appendix.htm">
                             Appendix
@@ -75,7 +76,7 @@
 
     <div class="container-fluid">
         <div class="page-header" style="text-align: center;">
-            <h2>VDOT Roadside Worksheet</h2>
+            <h2>Roadside Worksheet</h2>
         </div>
     </div>
     <div class="container" id="toolbar">
@@ -477,9 +478,7 @@
                 <h4 class="slide-header" style="text-align: center;">Finalize?</h4><br>
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3 text-center">
-                        <button type="button" id="download-pdf" class="btn btn-success">Download As PDF <i class="fa fa-download fa-2x"></i></button>
-                        <button type="button" id="add-core-mix" class="btn btn-primary">Add Core Mix</button>
-                        <button type="button" id="reset" class=" btn btn-danger">Reset All</button>
+                        <button type="button" id="download-pdf" class="btn btn-success" onclick="saveAsPDF();">Download As PDF <i class="fa fa-download fa-2x"></i></button>
                     </div>
                 </div>
             </div>
@@ -492,18 +491,6 @@
                 </div>
                 <div class="col-sm-1 pull-right">
                     <button class="btn btn-primary" style="background-color: #D5732F; border-color: #B24C05;" id="next-slide">&#8680;</button>
-                </div>
-            </div>
-            <div class="row" style="display: flex; justify-content: center;">
-                <div class="col-sm-3">
-                    <div class="btn-toolbar" role="toolbar">
-                        <div class="btn-group mr-2">
-                            <button type="button" class="btn btn-secondary" style="border-radius: 50%; height: 25px; width: 25px; margin-right: 25px; margin-left: 30px;" id="slide-1"></button>
-                            <button type="button" class="btn btn-secondary" style="border-radius: 50%; height: 25px; width: 25px; margin-right: 25px;" id="slide-2"></button>
-                            <button type="button" class="btn btn-secondary" style="border-radius: 50%; height: 25px; width: 25px; margin-right: 25px;" id="slide-3"></button>
-                            <button type="button" class="btn btn-secondary" style="border-radius: 50%; height: 25px; width: 25px; margin-right: 25px;" id="slide-4"></button>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
