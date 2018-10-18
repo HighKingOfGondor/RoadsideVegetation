@@ -8,7 +8,42 @@ $(document).ready(function () {
             });
     });
 
+    $('#download-pdf').on("click", function () {
 
+        $("#slide-one-content").show();
+        $("#slide-two-content").show();
+        $("#slide-three-content").show();
+
+        let doc = new jsPDF('l', 'pt', 'a4');
+
+        var elements = ["slide-one-content", "slide-two-content", "slide-three-content"];
+        var i = 0;
+        var recursiveAddHtml = function () {
+            if (i < elements.length) {
+                doc.addHTML(document.getElementById(elements[i]), 5, 5, function () {
+                    console.log("here");
+                    i++;
+                    doc.addPage();
+                    recursiveAddHtml();
+                });
+            } else {
+                doc.save("test");
+            }
+        };
+
+        recursiveAddHtml();
+
+        $("#slide-one-content").hide();
+        $("#slide-two-content").hide();
+        $("#slide-three-content").hide();
+
+    });
+
+
+    $("#how-many-core-seed-mixes").on("change", function () {
+        var val = $("#how-many-core-seed-mixes").val();
+        console.log(val);
+    });
 
 });
 
@@ -39,22 +74,4 @@ function fillForm () {
     }
 }
 
-
-$(document).ready(function () {
-    $('#save-as-pdf').click(function () {
-        console.log("here");
-        let doc = new jsPDF('p','pt','letter');
-        doc.addHTML($('#chart').css('background', 'white'), function () {
-            doc.save('test.pdf');
-        });
-    });
-
-
-    $('#download-pdf').click(function () {
-        let doc = new jsPDF('l', 'pt', 'a4');
-        doc.addHTML($('#project-information').show()[0], 15, 15, function () {
-            doc.save('test.pdf');
-        });
-    });
-});
 
