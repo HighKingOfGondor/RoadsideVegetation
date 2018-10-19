@@ -212,6 +212,32 @@ $(document).ready(function () {
         }
     });
 
+    $("#how-many-core-seed-mixes").on("change", function () {
+        var val = $("#how-many-core-seed-mixes").val();
+        cloneDiv();
+    });
 
+    var cloneDiv = function () {
+        var totalMixes = $("#how-many-core-seed-mixes").val();
+        if (totalMixes > 5) {
+            totalMixes = 5;
+            $("#how-many-core-seed-mixes").val(5);
+            $("#how-many-core-seed-mixes").text(5);
+        }
+        if (totalMixes > coreMixDivs.length) {
+            for (var i = coreMixDivs.length; i < totalMixes; i++) {
+                $('#slide-three-content').clone().attr('id', "clone" + coreMixDivs.length).insertAfter("#slide-three-content");
+                $("clone" + coreMixDivs.length).show();
+                coreMixDivs.push("clone" + coreMixDivs.length);
+                pageCount++;
+            }
+        } else if (coreMixDivs.length > totalMixes) {
+            for (var i = coreMixDivs.length; i > totalMixes; i--) {
+                var remove = coreMixDivs.pop();
+                $('#' + remove).remove();
+            }
+        }
 
+    }
 });
+
