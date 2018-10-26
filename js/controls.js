@@ -157,6 +157,7 @@ $(document).ready(function () {
                 } else {
                     $("#" + coreMixDivs[1]).show(500);
                     $("#final-slide").hide();
+                    $("#" + coreMixDivs[1] + " h4:first").text("Core Mix 2");
                 }
 
                 $("#slide-one-content").hide();
@@ -169,8 +170,9 @@ $(document).ready(function () {
                 if (page === pageCount) {
                     $("#final-slide").show(500);
                 } else {
-                    $("#" + coreMixDivs[1]).show(500);
+                    $("#" + coreMixDivs[2]).show(500);
                     $("#final-slide").hide();
+                    $("#" + coreMixDivs[2] + " h4:first").text("Core Mix 3");
                 }
 
                 $("#slide-one-content").hide();
@@ -183,8 +185,9 @@ $(document).ready(function () {
                 if (page === pageCount) {
                     $("#final-slide").show(500);
                 } else {
-                    $("#" + coreMixDivs[2]).show(500);
+                    $("#" + coreMixDivs[3]).show(500);
                     $("#final-slide").hide();
+                    $("#" + coreMixDivs[3] + " h4:first").text("Core Mix 4");
                 }
 
                 $("#slide-one-content").hide();
@@ -197,8 +200,9 @@ $(document).ready(function () {
                 if (page === pageCount) {
                     $("#final-slide").show(500);
                 } else {
-                    $("#" + coreMixDivs[3]).show(500);
+                    $("#" + coreMixDivs[4]).show(500);
                     $("#final-slide").hide();
+                    $("#" + coreMixDivs[4] + " h4:first").text("Core Mix 5");
                 }
 
                 $("#slide-one-content").hide();
@@ -211,7 +215,7 @@ $(document).ready(function () {
                 if (page === pageCount) {
                     $("#final-slide").show(500);
                 } else {
-                    $("#" + coreMixDivs[4]).show(500);
+                    $("#" + coreMixDivs[5]).show(500);
                     $("#final-slide").hide();
                 }
 
@@ -236,8 +240,8 @@ $(document).ready(function () {
         }
         if (totalMixes > coreMixDivs.length) {
             for (var i = coreMixDivs.length; i < totalMixes; i++) {
-                $('#slide-three-content').clone().attr('id', "clone" + coreMixDivs.length).insertAfter("#slide-three-content");
-                $("clone" + coreMixDivs.length).show();
+                var elem = "clone" + coreMixDivs.length;
+                $('#slide-three-content').clone().attr('id', elem).insertAfter("#slide-three-content");
                 coreMixDivs.push("clone" + coreMixDivs.length);
                 pageCount++;
             }
@@ -247,7 +251,6 @@ $(document).ready(function () {
                 $('#' + remove).remove();
             }
         }
-
     }
 
     $('#download-pdf').on("click", function () {
