@@ -269,14 +269,13 @@ $(document).ready(function () {
         var pdf = new jsPDF('l', 'pt', 'letter');
 
         html2canvas($("#slide-one-content")[0], {
+            allowTaint: true,
             onrendered: function(canvas) {
-                document.body.appendChild(canvas);
                 var ctx = canvas.getContext('2d');
                 var imgData = canvas.toDataURL("image/png", 1.0);
                 var width = 810;
                 var height = 580;
                 pdf.addImage(imgData, 'PNG', 20, 20, (width - 40), (height));
-
             }
         });
         html2canvas($("#slide-two-content")[0], {
