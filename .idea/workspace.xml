@@ -4,6 +4,9 @@
     <list default="true" id="26802ac5-ec6c-4d35-893b-63656a1972b2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.htm" beforeDir="false" afterPath="$PROJECT_DIR$/index.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/controls.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/controls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/vdot.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/vdot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vdot.html" beforeDir="false" afterPath="$PROJECT_DIR$/vdot.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -107,41 +110,41 @@
         <counts>
           <entry key="project.closed" value="12" />
           <entry key="project.open.time.3" value="3" />
-          <entry key="project.open.time.4" value="4" />
+          <entry key="project.open.time.4" value="5" />
           <entry key="project.open.time.5" value="4" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="613" />
           <entry key="htm" value="66" />
-          <entry key="html" value="8966" />
-          <entry key="js" value="3349" />
+          <entry key="html" value="8967" />
+          <entry key="js" value="3630" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="613" />
-          <entry key="HTML" value="9032" />
-          <entry key="JavaScript" value="3349" />
+          <entry key="HTML" value="9033" />
+          <entry key="JavaScript" value="3630" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="5" />
           <entry key="htm" value="7" />
-          <entry key="html" value="4" />
-          <entry key="js" value="3" />
+          <entry key="html" value="5" />
+          <entry key="js" value="5" />
           <entry key="rnc" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="5" />
-          <entry key="HTML" value="11" />
-          <entry key="JavaScript" value="3" />
+          <entry key="HTML" value="12" />
+          <entry key="JavaScript" value="5" />
           <entry key="RNG Compact" value="1" />
         </counts>
       </usages-collector>
@@ -155,8 +158,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/vdot.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+            <state relative-caret-position="435">
+              <caret line="29" column="4" lean-forward="true" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/controls.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="329" column="35" selection-start-line="329" selection-start-column="35" selection-end-line="329" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -164,8 +176,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vdot.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="392" column="33" selection-start-line="392" selection-start-column="33" selection-end-line="392" selection-end-column="33" />
+            <state relative-caret-position="240">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -186,15 +198,6 @@
                 <element signature="n#style#0;n#h6#0;n#div#0;n#div#0;n#div#3;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h4#0;n#div#3;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/index.htm">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="88" column="8" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -245,10 +248,10 @@
         <option value="$PROJECT_DIR$/instructions.html" />
         <option value="$PROJECT_DIR$/facility.htm" />
         <option value="$PROJECT_DIR$/appendix.htm" />
-        <option value="$PROJECT_DIR$/js/vdot.js" />
-        <option value="$PROJECT_DIR$/js/controls.js" />
-        <option value="$PROJECT_DIR$/vdot.html" />
         <option value="$PROJECT_DIR$/index.htm" />
+        <option value="$PROJECT_DIR$/js/vdot.js" />
+        <option value="$PROJECT_DIR$/vdot.html" />
+        <option value="$PROJECT_DIR$/js/controls.js" />
       </list>
     </option>
   </component>
@@ -258,9 +261,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="59" />
-    <option name="y" value="28" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-134" />
+    <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="823" />
   </component>
@@ -270,7 +273,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -292,6 +294,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -348,23 +351,24 @@
       <workItem from="1539982842221" duration="1945000" />
       <workItem from="1540578009824" duration="7118000" />
       <workItem from="1540917849736" duration="570000" />
+      <workItem from="1540919281386" duration="6499000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="182952000" />
+    <option name="totallyTimeSpent" value="189451000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="59" y="28" width="1440" height="823" extended-state="0" />
+    <frame x="8" y="23" width="1440" height="823" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49795362" visible="true" weight="0.24947146" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49795362" visible="true" weight="0.24947146" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5020464" side_tool="true" weight="0.24947146" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3994528" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -428,13 +432,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/calc.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="653">
-          <caret line="878" column="29" selection-start-line="878" selection-start-column="29" selection-end-line="878" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/acrp0911.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
@@ -446,13 +443,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
           <caret line="432" column="22" selection-start-line="432" selection-start-column="22" selection-end-line="432" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/calc.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2129">
-          <caret line="354" column="20" lean-forward="true" selection-start-line="354" selection-start-column="20" selection-end-line="354" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -484,24 +474,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controls.js">
+    <entry file="file://$PROJECT_DIR$/index.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="217" column="41" selection-start-line="217" selection-start-column="41" selection-end-line="217" selection-end-column="41" />
+        <state relative-caret-position="315">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/vdot.js">
+    <entry file="file://$PROJECT_DIR$/calc.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+        <state relative-caret-position="2252">
+          <caret line="354" column="20" lean-forward="true" selection-start-line="354" selection-start-column="20" selection-end-line="354" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/calc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1268">
+          <caret line="878" column="29" selection-start-line="878" selection-start-column="29" selection-end-line="878" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vdot.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="392" column="33" selection-start-line="392" selection-start-column="33" selection-end-line="392" selection-end-column="33" />
+        <state relative-caret-position="240">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -525,10 +522,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.htm">
+    <entry file="file://$PROJECT_DIR$/js/vdot.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="88" column="8" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="8" />
+        <state relative-caret-position="435">
+          <caret line="29" column="4" lean-forward="true" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controls.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="329" column="35" selection-start-line="329" selection-start-column="35" selection-end-line="329" selection-end-column="35" />
         </state>
       </provider>
     </entry>
