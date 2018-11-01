@@ -255,6 +255,8 @@ $(document).ready(function () {
 
     $('#download-pdf').on("click", function () {
 
+        $("body").addClass("loading");
+
         var totalMixes = $("#how-many-core-seed-mixes").val();
         if (totalMixes > 5) {
             totalMixes = 5;
@@ -328,7 +330,9 @@ $(document).ready(function () {
 
             pdf.save('sample.pdf');
 
+            $("body").removeClass("loading");
         }, 0);
+
     });
 
 });
