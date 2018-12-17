@@ -342,24 +342,840 @@
         <!-- ********************************************************************************* -->
                 <!-- Modal -->
                 <div class="modal fade" id="area-calculator" role="dialog">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog" style="width: 750px;">
                         <!-- Modal content-->
-                        <div class="modal-content" style="width: 900px;">
+                        <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Area Calculator</h4>
-
+                                <h4 class="modal-title text-center">Area Calculator</h4><br>
                             </div>
                             <div class="modal-body">
-                                <script>
-                                    $("#area-calculator").on("click",function(e) {
-                                        e.preventDefault();
-                                        $("#myModal")
-                                            .html('<object width="100%" height="100%" type="text/html" data="calc.html" ></object>')
-                                            .foundation("open");
 
-                                    });
-                                </script>
+                                <div class="container" id="first-calc-slide">
+                                    <div>
+                                        <p>Is the measurement in...</p>
+                                        <button class="btn btn-primary" id="lw">Length/Width</button> OR <button class="btn btn-primary" id="ar">Area</button>
+                                    </div>
+                                </div>
+
+                        <!-- ************** Length/Width content *************************************** -->
+                                <div id="second-calc-slide">
+                                    <div class="navbar-header">
+                                        Area 1
+                                    </div><br>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-1">
+                                                <div style="padding-bottom: 30px;">
+                                                    <label for="length-value1">Length</label><br>
+                                                </div>
+                                                <div style="padding-bottom: 30px;">
+                                                    <label for="width-value1">Width</label>
+                                                </div>
+                                                <div>
+                                                    <label for="mult-value1">Multiplier</label>
+                                                </div>
+                                            </div>
+                                            <form>
+                                                <div class="col-md-2">
+                                                    <div style="padding-bottom: 20px;">
+                                                        <input class="form-control" type="number" placeholder="Length" id="length-value1" style="width: 175px;">
+                                                    </div>
+                                                    <div style="padding-bottom: 20px;">
+                                                        <input class="form-control" type="number" placeholder="Width" id="width-value1" style="width: 175px;">
+                                                    </div>
+                                                    <div>
+                                                        <input class="form-control" type="number" placeholder="Multiplier" id="mult-value1" style="width: 175px;">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="LWmeasurementRadios1" id="LWmeasurementRadios11" value="option1" checked>
+                                                        <label class="form-check-label" for="LWmeasurementRadios11">
+                                                            Feet
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="LWmeasurementRadios1" id="LWmeasurementRadios12" value="option2">
+                                                        <label class="form-check-label" for="LWmeasurementRadios12">
+                                                            Miles
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="LWmeasurementRadios1" id="LWmeasurementRadios13" value="option3">
+                                                        <label class="form-check-label" for="LWmeasurementRadios13">
+                                                            Kilometers
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="LWmeasurementRadios1" id="LWmeasurementRadios14" value="option4">
+                                                        <label class="form-check-label" for="LWmeasurementRadios14">
+                                                            Meters
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="LWmeasurementRadios1" id="LWmeasurementRadios15" value="option5">
+                                                        <label class="form-check-label" for="LWmeasurementRadios15">
+                                                            Yards
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <p style="font-size: 15px; font-weight: bold">Is the slope of this area steeper than 3:1, 33.3% grade?</p>
+                                                    <div class="form-check radio-inline">
+                                                        <input class="form-check-input" type="radio" name="slopeRadio1" id="slope-y1" value="yes">
+                                                        <label class="form-check-label" for="slope-y1">
+                                                            Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check radio-inline">
+                                                        <input class="form-check-input" type="radio" name="slopeRadio1" id="slope-n1" value="no" checked>
+                                                        <label class="form-check-label" for="slope-n1">
+                                                            No
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div><br>
+                                    <div class="navbar-header">
+                                        Area 2
+                                    </div><br>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-1">
+                                                <div style="padding-bottom: 30px;">
+                                                    <label for="length-value2">Length</label><br>
+                                                </div>
+                                                <div style="padding-bottom: 30px;">
+                                                    <label for="width-value2">Width</label>
+                                                </div>
+                                                <div>
+                                                    <label for="mult-value2">Multiplier</label>
+                                                </div>
+                                            </div>
+                                            <form>
+                                                <div class="col-md-2">
+                                                    <div style="padding-bottom: 20px;">
+                                                        <input class="form-control" type="number" placeholder="Length" id="length-value2" style="width: 175px;">
+                                                    </div>
+                                                    <div style="padding-bottom: 20px;">
+                                                        <input class="form-control" type="number" placeholder="Width" id="width-value2" style="width: 175px;">
+                                                    </div>
+                                                    <div>
+                                                        <input class="form-control" type="number" placeholder="Multiplier" id="mult-value2" style="width: 175px;">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="LWmeasurementRadios2" id="LWmeasurementRadios21" value="option1" checked>
+                                                        <label class="form-check-label" for="LWmeasurementRadios21">
+                                                            Feet
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="LWmeasurementRadios2" id="LWmeasurementRadios22" value="option2">
+                                                        <label class="form-check-label" for="LWmeasurementRadios22">
+                                                            Miles
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="LWmeasurementRadios2" id="LWmeasurementRadios23" value="option3">
+                                                        <label class="form-check-label" for="LWmeasurementRadios23">
+                                                            Kilometers
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="LWmeasurementRadios2" id="LWmeasurementRadios24" value="option4">
+                                                        <label class="form-check-label" for="LWmeasurementRadios24">
+                                                            Meters
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="LWmeasurementRadios2" id="LWmeasurementRadios25" value="option5">
+                                                        <label class="form-check-label" for="LWmeasurementRadios25">
+                                                            Yards
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <p style="font-size: 15px; font-weight: bold">Is the slope of this area steeper than 3:1, 33.3% grade?</p>
+                                                    <div class="form-check radio-inline">
+                                                        <input class="form-check-input" type="radio" name="slopeRadio2" id="slope-y2" value="yes">
+                                                        <label class="form-check-label" for="slope-y2">
+                                                            Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check radio-inline">
+                                                        <input class="form-check-input" type="radio" name="slopeRadio2" id="slope-n2" value="no" checked>
+                                                        <label class="form-check-label" for="slope-n2">
+                                                            No
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div><br>
+                                    <div class="navbar-header">
+                                        Area 3
+                                    </div><br>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-1">
+                                                <div style="padding-bottom: 30px;">
+                                                    <label for="length-value3">Length</label><br>
+                                                </div>
+                                                <div style="padding-bottom: 30px;">
+                                                    <label for="width-value3">Width</label>
+                                                </div>
+                                                <div>
+                                                    <label for="mult-value3">Multiplier</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div style="padding-bottom: 20px;">
+                                                    <input class="form-control" type="number" placeholder="Length" id="length-value3" style="width: 175px;">
+                                                </div>
+                                                <div style="padding-bottom: 20px;">
+                                                    <input class="form-control" type="number" placeholder="Width" id="width-value3" style="width: 175px;">
+                                                </div>
+                                                <div>
+                                                    <input class="form-control" type="number" placeholder="Multiplier" id="mult-value3" style="width: 175px;">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="LWmeasurementRadios3" id="LWmeasurementRadios31" value="option1" checked>
+                                                    <label class="form-check-label" for="LWmeasurementRadios31">
+                                                        Feet
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="LWmeasurementRadios3" id="LWmeasurementRadios32" value="option2">
+                                                    <label class="form-check-label" for="LWmeasurementRadios32">
+                                                        Miles
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="LWmeasurementRadios3" id="LWmeasurementRadios33" value="option3">
+                                                    <label class="form-check-label" for="LWmeasurementRadios33">
+                                                        Kilometers
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="LWmeasurementRadios3" id="LWmeasurementRadios34" value="option4">
+                                                    <label class="form-check-label" for="LWmeasurementRadios34">
+                                                        Meters
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="LWmeasurementRadios3" id="LWmeasurementRadios35" value="option5">
+                                                    <label class="form-check-label" for="LWmeasurementRadios35">
+                                                        Yards
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <p style="font-size: 15px; font-weight: bold">Is the slope of this area steeper than 3:1, 33.3% grade?</p>
+                                                <div class="form-check radio-inline">
+                                                    <input class="form-check-input" type="radio" name="slopeRadio3" id="slope-y3" value="yes">
+                                                    <label class="form-check-label" for="slope-y3">
+                                                        Yes
+                                                    </label>
+                                                </div>
+                                                <div class="form-check radio-inline">
+                                                    <input class="form-check-input" type="radio" name="slopeRadio3" id="slope-n3" value="no" checked>
+                                                    <label class="form-check-label" for="slope-n3">
+                                                        No
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><br>
+                                    <div class="navbar-header">
+                                        Area 4
+                                    </div><br>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-1">
+                                                <div style="padding-bottom: 30px;">
+                                                    <label for="length-value4">Length</label><br>
+                                                </div>
+                                                <div style="padding-bottom: 30px;">
+                                                    <label for="width-value4">Width</label>
+                                                </div>
+                                                <div>
+                                                    <label for="mult-value4">Multiplier</label>
+                                                </div>
+                                            </div>
+                                            <form>
+                                                <div class="col-md-2">
+                                                    <div style="padding-bottom: 20px;">
+                                                        <input class="form-control" type="number" placeholder="Length" id="length-value4" style="width: 175px;">
+                                                    </div>
+                                                    <div style="padding-bottom: 20px;">
+                                                        <input class="form-control" type="number" placeholder="Width" id="width-value4" style="width: 175px;">
+                                                    </div>
+                                                    <div>
+                                                        <input class="form-control" type="number" placeholder="Multiplier" id="mult-value4" style="width: 175px;">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="LWmeasurementRadios4" id="LWmeasurementRadios41" value="option1" checked>
+                                                        <label class="form-check-label" for="LWmeasurementRadios41">
+                                                            Feet
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="LWmeasurementRadios4" id="LWmeasurementRadios42" value="option2">
+                                                        <label class="form-check-label" for="LWmeasurementRadios42">
+                                                            Miles
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="LWmeasurementRadios4" id="LWmeasurementRadios43" value="option3">
+                                                        <label class="form-check-label" for="LWmeasurementRadios43">
+                                                            Kilometers
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="LWmeasurementRadios4" id="LWmeasurementRadios44" value="option4">
+                                                        <label class="form-check-label" for="LWmeasurementRadios44">
+                                                            Meters
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="LWmeasurementRadios4" id="LWmeasurementRadios45" value="option5">
+                                                        <label class="form-check-label" for="LWmeasurementRadios45">
+                                                            Yards
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <p style="font-size: 15px; font-weight: bold">Is the slope of this area steeper than 3:1, 33.3% grade?</p>
+                                                    <div class="form-check radio-inline">
+                                                        <input class="form-check-input" type="radio" name="slopeRadio4" id="slope-y4" value="yes">
+                                                        <label class="form-check-label" for="slope-y4">
+                                                            Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check radio-inline">
+                                                        <input class="form-check-input" type="radio" name="slopeRadio4" id="slope-n4" value="no" checked>
+                                                        <label class="form-check-label" for="slope-n4">
+                                                            No
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div><br>
+                                    <div class="navbar-header">
+                                        Area 5
+                                    </div><br>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-1">
+                                                <div style="padding-bottom: 30px;">
+                                                    <label for="length-value5">Length</label><br>
+                                                </div>
+                                                <div style="padding-bottom: 30px;">
+                                                    <label for="width-value5">Width</label>
+                                                </div>
+                                                <div>
+                                                    <label for="mult-value5">Multiplier</label>
+                                                </div>
+                                            </div>
+                                            <form>
+                                                <div class="col-md-2">
+                                                    <div style="padding-bottom: 20px;">
+                                                        <input class="form-control" type="number" placeholder="Length" id="length-value5" style="width: 175px;">
+                                                    </div>
+                                                    <div style="padding-bottom: 20px;">
+                                                        <input class="form-control" type="number" placeholder="Width" id="width-value5" style="width: 175px;">
+                                                    </div>
+                                                    <div>
+                                                        <input class="form-control" type="number" placeholder="Multiplier" id="mult-value5" style="width: 175px;">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="LWmeasurementRadios5" id="LWmeasurementRadios51" value="option1" checked>
+                                                        <label class="form-check-label" for="LWmeasurementRadios51">
+                                                            Feet
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="LWmeasurementRadios5" id="LWmeasurementRadios52" value="option2">
+                                                        <label class="form-check-label" for="LWmeasurementRadios52">
+                                                            Miles
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="LWmeasurementRadios5" id="LWmeasurementRadios53" value="option3">
+                                                        <label class="form-check-label" for="LWmeasurementRadios53">
+                                                            Kilometers
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="LWmeasurementRadios5" id="LWmeasurementRadios54" value="option4">
+                                                        <label class="form-check-label" for="LWmeasurementRadios54">
+                                                            Meters
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="LWmeasurementRadios5" id="LWmeasurementRadios55" value="option5">
+                                                        <label class="form-check-label" for="LWmeasurementRadios55">
+                                                            Yards
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <p style="font-size: 15px; font-weight: bold">Is the slope of this area steeper than 3:1, 33.3% grade?</p>
+                                                    <div class="form-check radio-inline">
+                                                        <input class="form-check-input" type="radio" name="slopeRadio5" id="slope-y5" value="yes">
+                                                        <label class="form-check-label" for="slope-y5">
+                                                            Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check radio-inline">
+                                                        <input class="form-check-input" type="radio" name="slopeRadio5" id="slope-n5" value="no" checked>
+                                                        <label class="form-check-label" for="slope-n5">
+                                                            No
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div><br><br>
+                                    <div style="margin: auto;">
+                                        <button class="btn btn-primary" onclick="LW();">Save</button>
+                                    </div>
+                                </div>
+                                <!-- ************** Area content *************************************** -->
+                                <div id="third-calc-slide">
+                                    <div class="navbar-header">
+                                        Area 1
+                                    </div><br>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-1">
+                                                <div style="padding-bottom: 30px;">
+                                                    <label for="area-value1">Area</label><br>
+                                                </div>
+                                                <div>
+                                                    <label for="mult-value1a">Multiplier</label>
+                                                </div>
+                                            </div>
+                                            <form>
+                                                <div class="col-md-2">
+                                                    <div style="padding-bottom: 20px;">
+                                                        <input class="form-control" type="number" placeholder="Area" id="area-value1" style="width: 175px;">
+                                                    </div>
+                                                    <div>
+                                                        <input class="form-control" type="number" placeholder="Multiplier" id="mult-value1a" style="width: 175px;">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="AmeasurementRadios1" id="AmeasurementRadios11" value="option1" checked>
+                                                        <label class="form-check-label" for="AmeasurementRadios11">
+                                                            Sq. Feet
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="AmeasurementRadios1" id="AmeasurementRadios12" value="option2">
+                                                        <label class="form-check-label" for="AmeasurementRadios12">
+                                                            Acres
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="AmeasurementRadios1" id="AmeasurementRadios13" value="option3">
+                                                        <label class="form-check-label" for="AmeasurementRadios13">
+                                                            Hectares
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="AmeasurementRadios1" id="AmeasurementRadios14" value="option4">
+                                                        <label class="form-check-label" for="AmeasurementRadios14">
+                                                            Sq. Kilometers
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="AmeasurementRadios1" id="AmeasurementRadios15" value="option5">
+                                                        <label class="form-check-label" for="AmeasurementRadios15">
+                                                            Sq. Yards
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="AmeasurementRadios1" id="AmeasurementRadios16" value="option6">
+                                                        <label class="form-check-label" for="AmeasurementRadios16">
+                                                            Sq. Meters
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="AmeasurementRadios1" id="AmeasurementRadios17" value="option7">
+                                                        <label class="form-check-label" for="AmeasurementRadios17">
+                                                            Sq. Miles
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <p style="font-size: 15px; font-weight: bold">Is the slope of this area steeper than 3:1, 33.3% grade?</p>
+                                                    <div class="form-check radio-inline">
+                                                        <input class="form-check-input" type="radio" name="slopeRadioA1" id="slope-y1a" value="yes">
+                                                        <label class="form-check-label" for="slope-y1a">
+                                                            Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check radio-inline">
+                                                        <input class="form-check-input" type="radio" name="slopeRadioA1" id="slope-n1a" value="no" checked>
+                                                        <label class="form-check-label" for="slope-n1a">
+                                                            No
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div><br>
+                                    <div class="navbar-header">
+                                        Area 2
+                                    </div><br>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-1">
+                                                <div style="padding-bottom: 30px;">
+                                                    <label for="area-value2">Area</label><br>
+                                                </div>
+                                                <div>
+                                                    <label for="mult-value2a">Multiplier</label>
+                                                </div>
+                                            </div>
+                                            <form>
+                                                <div class="col-md-2">
+                                                    <div style="padding-bottom: 20px;">
+                                                        <input class="form-control" type="number" placeholder="Area" id="area-value2" style="width: 175px;">
+                                                    </div>
+                                                    <div>
+                                                        <input class="form-control" type="number" placeholder="Multiplier" id="mult-value2a" style="width: 175px;">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="AmeasurementRadios2" id="AmeasurementRadios21" value="option1" checked>
+                                                        <label class="form-check-label" for="AmeasurementRadios21">
+                                                            Sq. Feet
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="AmeasurementRadios2" id="AmeasurementRadios22" value="option2">
+                                                        <label class="form-check-label" for="AmeasurementRadios22">
+                                                            Arces
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="AmeasurementRadios2" id="AmeasurementRadios23" value="option3">
+                                                        <label class="form-check-label" for="AmeasurementRadios23">
+                                                            Hectares
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="AmeasurementRadios2" id="AmeasurementRadios24" value="option4">
+                                                        <label class="form-check-label" for="AmeasurementRadios24">
+                                                            Sq. Kilometers
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="AmeasurementRadios2" id="AmeasurementRadios25" value="option5">
+                                                        <label class="form-check-label" for="AmeasurementRadios25">
+                                                            Sq. Yards
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="AmeasurementRadios2" id="AmeasurementRadios26" value="option6">
+                                                        <label class="form-check-label" for="AmeasurementRadios26">
+                                                            Sq. Meters
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="AmeasurementRadios2" id="AmeasurementRadios27" value="option7">
+                                                        <label class="form-check-label" for="AmeasurementRadios27">
+                                                            Sq. Miles
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <p style="font-size: 15px; font-weight: bold">Is the slope of this area steeper than 3:1, 33.3% grade?</p>
+                                                    <div class="form-check radio-inline">
+                                                        <input class="form-check-input" type="radio" name="slopeRadioA2" id="slope-y2a" value="yes">
+                                                        <label class="form-check-label" for="slope-y2a">
+                                                            Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check radio-inline">
+                                                        <input class="form-check-input" type="radio" name="slopeRadioA2" id="slope-n2a" value="no" checked>
+                                                        <label class="form-check-label" for="slope-n2a">
+                                                            No
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div><br>
+                                    <div class="navbar-header">
+                                        Area 3
+                                    </div><br>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-1">
+                                                <div style="padding-bottom: 30px;">
+                                                    <label for="area-value3">Area</label><br>
+                                                </div>
+                                                <div>
+                                                    <label for="mult-value3">Multiplier</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div style="padding-bottom: 20px;">
+                                                    <input class="form-control" type="number" placeholder="Area" id="area-value3" style="width: 175px;">
+                                                </div>
+                                                <div>
+                                                    <input class="form-control" type="number" placeholder="Multiplier" id="mult-value3a" style="width: 175px;">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="AmeasurementRadios3" id="AmeasurementRadios31" value="option1" checked>
+                                                    <label class="form-check-label" for="AmeasurementRadios31">
+                                                        Sq. Feet
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="AmeasurementRadios3" id="AmeasurementRadios32" value="option2">
+                                                    <label class="form-check-label" for="AmeasurementRadios32">
+                                                        Arces
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="AmeasurementRadios3" id="AmeasurementRadios33" value="option3">
+                                                    <label class="form-check-label" for="AmeasurementRadios33">
+                                                        Hectares
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="AmeasurementRadios3" id="AmeasurementRadios34" value="option4">
+                                                    <label class="form-check-label" for="AmeasurementRadios34">
+                                                        Sq. Kilometers
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="AmeasurementRadios3" id="AmeasurementRadios35" value="option5">
+                                                    <label class="form-check-label" for="AmeasurementRadios35">
+                                                        Sq. Yards
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="AmeasurementRadios3" id="AmeasurementRadios36" value="option6">
+                                                    <label class="form-check-label" for="AmeasurementRadios36">
+                                                        Sq. Meters
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="AmeasurementRadios3" id="AmeasurementRadios37" value="option7">
+                                                    <label class="form-check-label" for="AmeasurementRadios37">
+                                                        Sq. Miles
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <p style="font-size: 15px; font-weight: bold">Is the slope of this area steeper than 3:1, 33.3% grade?</p>
+                                                <div class="form-check radio-inline">
+                                                    <input class="form-check-input" type="radio" name="slopeRadioA3" id="slope-y3a" value="option4" value="yes">
+                                                    <label class="form-check-label" for="slope-y3a">
+                                                        Yes
+                                                    </label>
+                                                </div>
+                                                <div class="form-check radio-inline">
+                                                    <input class="form-check-input" type="radio" name="slopeRadioA3" id="slope-n3a" value="option5" value="no" checked>
+                                                    <label class="form-check-label" for="slope-n3a">
+                                                        No
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><br>
+                                    <div class="navbar-header">
+                                        Area 4
+                                    </div><br>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-1">
+                                                <div style="padding-bottom: 30px;">
+                                                    <label for="area-value4">Area</label><br>
+                                                </div>
+                                                <div>
+                                                    <label for="mult-value4">Multiplier</label>
+                                                </div>
+                                            </div>
+                                            <form>
+                                                <div class="col-md-2">
+                                                    <div style="padding-bottom: 20px;">
+                                                        <input class="form-control" type="number" placeholder="Area" id="area-value4" style="width: 175px;">
+                                                    </div>
+                                                    <div>
+                                                        <input class="form-control" type="number" placeholder="Multiplier" id="mult-value4a" style="width: 175px;">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="AmeasurementRadios4" id="AmeasurementRadios41" value="option1" checked>
+                                                        <label class="form-check-label" for="AmeasurementRadios41">
+                                                            Sq. Feet
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="AmeasurementRadios4" id="AmeasurementRadios42" value="option2">
+                                                        <label class="form-check-label" for="AmeasurementRadios42">
+                                                            Arces
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="AmeasurementRadios4" id="AmeasurementRadios43" value="option3">
+                                                        <label class="form-check-label" for="AmeasurementRadios43">
+                                                            Hectares
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="AmeasurementRadios4" id="AmeasurementRadios44" value="option4">
+                                                        <label class="form-check-label" for="AmeasurementRadios44">
+                                                            Sq. Kilometers
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="AmeasurementRadios4" id="AmeasurementRadios45" value="option5">
+                                                        <label class="form-check-label" for="AmeasurementRadios45">
+                                                            Sq. Yards
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="AmeasurementRadios4" id="AmeasurementRadios46" value="option6">
+                                                        <label class="form-check-label" for="AmeasurementRadios46">
+                                                            Sq. Meters
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="AmeasurementRadios4" id="AmeasurementRadios47" value="option7">
+                                                        <label class="form-check-label" for="AmeasurementRadios47">
+                                                            Sq. Miles
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <p style="font-size: 15px; font-weight: bold">Is the slope of this area steeper than 3:1, 33.3% grade?</p>
+                                                    <div class="form-check radio-inline">
+                                                        <input class="form-check-input" type="radio" name="slopeRadioA4" id="slope-y4a" value="yes">
+                                                        <label class="form-check-label" for="slope-y4a">
+                                                            Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check radio-inline">
+                                                        <input class="form-check-input" type="radio" name="slopeRadioA4" id="slope-n4a" value="no" checked>
+                                                        <label class="form-check-label" for="slope-n4a">
+                                                            No
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div><br>
+                                    <div class="navbar-header">
+                                        Area 5
+                                    </div><br>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-1">
+                                                <div style="padding-bottom: 30px;">
+                                                    <label for="area-value5">Area</label><br>
+                                                </div>
+                                                <div>
+                                                    <label for="mult-value5a">Multiplier</label>
+                                                </div>
+                                            </div>
+                                            <form>
+                                                <div class="col-md-2">
+                                                    <div style="padding-bottom: 20px;">
+                                                        <input class="form-control" type="number" placeholder="Area" id="area-value5" style="width: 175px;">
+                                                    </div>
+                                                    <div>
+                                                        <input class="form-control" type="number" placeholder="Multiplier" id="mult-value5a" style="width: 175px;">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="AmeasurementRadios5" id="AmeasurementRadios51" value="option1" checked>
+                                                        <label class="form-check-label" for="AmeasurementRadios51">
+                                                            Sq. Feet
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="AmeasurementRadios5" id="AmeasurementRadios52" value="option2">
+                                                        <label class="form-check-label" for="AmeasurementRadios52">
+                                                            Arces
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="AmeasurementRadios5" id="AmeasurementRadios53" value="option3">
+                                                        <label class="form-check-label" for="AmeasurementRadios53">
+                                                            Hectares
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="AmeasurementRadios5" id="AmeasurementRadios54" value="option4">
+                                                        <label class="form-check-label" for="AmeasurementRadios54">
+                                                            Sq. Kilometers
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="AmeasurementRadios5" id="AmeasurementRadios55" value="option5">
+                                                        <label class="form-check-label" for="AmeasurementRadios55">
+                                                            Sq. Yards
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="AmeasurementRadios5" id="AmeasurementRadios56" value="option6">
+                                                        <label class="form-check-label" for="AmeasurementRadios56">
+                                                            Sq. Meters
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="AmeasurementRadios5" id="AmeasurementRadios57" value="option7">
+                                                        <label class="form-check-label" for="AmeasurementRadios57">
+                                                            Sq. Miles
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <p style="font-size: 15px; font-weight: bold">Is the slope of this area steeper than 3:1, 33.3% grade?</p>
+                                                    <div class="form-check radio-inline">
+                                                        <input class="form-check-input" type="radio" name="slopeRadioA5" id="slope-y5a" value="yes">
+                                                        <label class="form-check-label" for="slope-y5a">
+                                                            Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check radio-inline">
+                                                        <input class="form-check-input" type="radio" name="slopeRadioA5" id="slope-n5a" value="no" checked>
+                                                        <label class="form-check-label" for="slope-n5a">
+                                                            No
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div><br><br>
+                                    <div style="margin: auto;">
+                                        <button class="btn btn-primary" onclick="A();">Save</button>
+                                    </div>
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
